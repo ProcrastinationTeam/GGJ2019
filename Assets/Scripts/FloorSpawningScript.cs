@@ -122,7 +122,6 @@ public class FloorSpawningScript : MonoBehaviour
                 // obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
             }
 
-            floorNames.Add(prefab.name);
             yield return new WaitForSeconds(0.1f);
         }
     }
