@@ -343,30 +343,30 @@ MonoBehaviour:
   _tangents: []
   _sharedIndicesUV: []
   _colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
   userCollisions: 0
   isSelectable: 1
   unwrapParameters:
@@ -722,30 +722,30 @@ MonoBehaviour:
   _tangents: []
   _sharedIndicesUV: []
   _colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
   userCollisions: 0
   isSelectable: 1
   unwrapParameters:
@@ -1136,30 +1136,30 @@ MonoBehaviour:
   _tangents: []
   _sharedIndicesUV: []
   _colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
   userCollisions: 0
   isSelectable: 1
   unwrapParameters:
@@ -1515,30 +1515,30 @@ MonoBehaviour:
   _tangents: []
   _sharedIndicesUV: []
   _colors:
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
-  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
+  - {r: 1, g: 0.92156863, b: 0.5137255, a: 1}
   userCollisions: 0
   isSelectable: 1
   unwrapParameters:
@@ -1832,6 +1832,246 @@ PrefabInstance:
         type: 3}
       propertyPath: _uv.Array.data[23].x
       value: -7
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[0].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[0].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[1].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[1].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[2].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[2].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[3].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[3].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[4].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[4].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[5].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[5].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[6].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[6].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[7].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[7].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[8].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[8].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[9].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[9].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[10].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[10].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[11].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[11].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[12].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[12].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[13].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[13].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[14].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[14].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[15].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[15].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[16].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[16].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[17].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[17].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[18].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[18].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[19].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[19].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[20].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[20].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[21].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[21].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[22].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[22].b
+      value: 0.5137255
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[23].g
+      value: 0.92156863
+      objectReference: {fileID: 0}
+    - target: {fileID: 9056241752703456691, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
+        type: 3}
+      propertyPath: _colors.Array.data[23].b
+      value: 0.5137255
       objectReference: {fileID: 0}
     - target: {fileID: 9056241752703456688, guid: 663da82a86f8a7140a1fe6ec0a39a1eb,
         type: 3}
