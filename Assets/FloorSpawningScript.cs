@@ -18,7 +18,7 @@ public class FloorSpawningScript : MonoBehaviour
     [SerializeField]
     private int numberOfFloors;
 
-    private List<string> floorNames = new List<string>();
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,10 +31,10 @@ public class FloorSpawningScript : MonoBehaviour
 
             obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + (20 * (i + 1)), ground.transform.position.z);
 
-            floorNames.Add(prefab.name);
+            StorageScript.GM.floorNames.Add(prefab.name);
         }
 
-        Debug.Log("Floors: [" + String.Join(", ", floorNames));
+        Debug.Log("Floors: [" + String.Join(", ", StorageScript.GM.floorNames));
     }
 
     // Update is called once per frame
