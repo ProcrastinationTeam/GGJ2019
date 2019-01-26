@@ -6,6 +6,11 @@ using UnityEngine;
 
 public class FloorSpawningScript : MonoBehaviour
 {
+
+    [Header("Narrative")]
+    [SerializeField]
+    private TMPro.TextMeshProUGUI endText;
+
     [Header("Logic")]
     [SerializeField] private List<GameObject> RDC_Prefabs;
     [SerializeField] private List<GameObject> Etage_Prefabs;
@@ -159,4 +164,35 @@ public class FloorSpawningScript : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+    private void EndGameUI(int endId)
+    {
+        
+
+        switch (endId)
+        {
+            case 1:
+                endText.text = "Il semblerait que ton foyer soit le fruit de la découverte et de l'originalité...";
+                break;
+            case 2:
+                endText.text = "Ton foyer est le mélange de tes souvenirs et de l'ouverture vers de nouveaux horizons / tu as exploré de nouveau horizons";
+                break;
+            case 3:
+                endText.text = "Ton foyer est emprunt de tradition et tu semble attacher à tes souvenirs";
+                break;
+            default:
+                break;
+        }
+    }
+
+
+    IEnumerator Fade()
+    {
+        for (float f = 1f; f >= 0; f -= 0.1f)
+        {
+           
+            yield return null;
+        }
+    }
+
 }
