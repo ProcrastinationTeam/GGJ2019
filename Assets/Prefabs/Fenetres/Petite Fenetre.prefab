@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 2527171648324166117}
   - component: {fileID: 2527171648324166116}
   - component: {fileID: 2527171648324166115}
-  - component: {fileID: 2527171648324166114}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -380,20 +379,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &2527171648324166114
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2527171648324166113}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &2527171648946380033
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +392,6 @@ GameObject:
   - component: {fileID: 2527171648946380037}
   - component: {fileID: 2527171648946380036}
   - component: {fileID: 2527171648946380035}
-  - component: {fileID: 2527171648946380034}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -798,20 +782,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &2527171648946380034
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2527171648946380033}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &2527171649330640788
 GameObject:
   m_ObjectHideFlags: 0
@@ -825,7 +795,6 @@ GameObject:
   - component: {fileID: 2527171649330640744}
   - component: {fileID: 2527171649330640791}
   - component: {fileID: 2527171649330640790}
-  - component: {fileID: 2527171649330640789}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1192,20 +1161,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &2527171649330640789
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2527171649330640788}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &2527171649438449130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1219,7 +1174,6 @@ GameObject:
   - component: {fileID: 2527171649438449134}
   - component: {fileID: 2527171649438449133}
   - component: {fileID: 2527171649438449132}
-  - component: {fileID: 2527171649438449131}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1610,20 +1564,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &2527171649438449131
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2527171649438449130}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &2527171649623591628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1637,7 +1577,6 @@ GameObject:
   - component: {fileID: 2527171649623591616}
   - component: {fileID: 2527171649623591631}
   - component: {fileID: 2527171649623591630}
-  - component: {fileID: 2527171649623591629}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -2028,20 +1967,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &2527171649623591629
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2527171649623591628}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &5626364137889345739
 GameObject:
   m_ObjectHideFlags: 0

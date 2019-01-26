@@ -130,15 +130,17 @@ public class FloorSpawningScript : MonoBehaviour
         {
             GameObject prefab = null;
 
-            if(floor == 0)
+            if (floor == 0)
             {
                 // Debug.Log("INSTANCIATE RDC");
                 prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
-            } else if (floor < numberOfMiddleFloors + 1)
+            }
+            else if (floor < numberOfMiddleFloors + 1)
             {
                 // Debug.Log("INSTANCIATE ETAGES " + (i + 1));
                 prefab = Etage_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
-            } else
+            }
+            else
             {
                 // Debug.Log("INSTANCIATE TOIT");
                 prefab = Toit_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
@@ -153,4 +155,5 @@ public class FloorSpawningScript : MonoBehaviour
 
             yield return new WaitForSeconds(0.1f);
         }
+    }
 }

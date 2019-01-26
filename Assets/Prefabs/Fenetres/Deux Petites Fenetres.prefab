@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 343766022}
   - component: {fileID: 343766021}
   - component: {fileID: 343766020}
-  - component: {fileID: 343766019}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -380,20 +379,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &343766019
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 343766018}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &420119332
 GameObject:
   m_ObjectHideFlags: 0
@@ -407,7 +392,6 @@ GameObject:
   - component: {fileID: 420119336}
   - component: {fileID: 420119335}
   - component: {fileID: 420119334}
-  - component: {fileID: 420119333}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -774,20 +758,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &420119333
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 420119332}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &960555133
 GameObject:
   m_ObjectHideFlags: 0
@@ -801,7 +771,6 @@ GameObject:
   - component: {fileID: 960555138}
   - component: {fileID: 960555137}
   - component: {fileID: 960555136}
-  - component: {fileID: 960555135}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -1168,20 +1137,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &960555135
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 960555133}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &1803583100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1195,7 +1150,6 @@ GameObject:
   - component: {fileID: 1803583104}
   - component: {fileID: 1803583103}
   - component: {fileID: 1803583102}
-  - component: {fileID: 1803583101}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1562,20 +1516,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &1803583101
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803583100}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &5626364137889345739
 GameObject:
   m_ObjectHideFlags: 0
