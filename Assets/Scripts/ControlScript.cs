@@ -52,7 +52,11 @@ public class ControlScript : MonoBehaviour
 
     private void GoForward()
     {
-        nextCameraPos = new Vector3(Camera.main.transform.position.x + 20, Camera.main.transform.position.y, Camera.main.transform.position.z);
-        translateCamera = true;
+        if(translateCamera == false)
+        {
+            nextCameraPos = new Vector3(Camera.main.transform.position.x + 20, Camera.main.transform.position.y, Camera.main.transform.position.z);
+            translateCamera = true;
+        }
+       
     }
 }

@@ -501,6 +501,11 @@ MonoBehaviour:
   - {fileID: 2691566016102925877, guid: 31d550396c2b8fa4180e886e6340c178, type: 3}
   - {fileID: 4411781805297101055, guid: dba5389a0e2ebff4f8345b094a287f99, type: 3}
   - {fileID: 2961274042000481668, guid: 50daf82dad0e5824987f4f7bb05d7336, type: 3}
+  Balcons_Prefabs: []
+  Etages_Prefabs: []
+  FacePortes_Prefabs: []
+  Fenetres_Prefabs: []
+  Toit_Prefabs: []
   container: {fileID: 1758588871}
   ground: {fileID: 577944145}
   numberOfFloors: 6

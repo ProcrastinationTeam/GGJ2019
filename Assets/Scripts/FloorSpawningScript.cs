@@ -23,6 +23,14 @@ public class FloorSpawningScript : MonoBehaviour
     [SerializeField]
     public List<GameObject> RDC_Prefabs;
 
+    [SerializeField]
+    public List<GameObject> Etages_Prefabs;
+
+    [SerializeField]
+    public List<GameObject> Toit_Prefabs;
+
+
+
     [Header("LOGIC")]
 
     private GameObject prefab;
@@ -51,7 +59,7 @@ public class FloorSpawningScript : MonoBehaviour
             var obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
             obj.transform.parent = container.transform;
 
-            obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + 20, ground.transform.position.z);
+            obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + 41.5f, ground.transform.position.z);
             obj.transform.rotation = ground.transform.rotation;
 
             StorageScript.GM.floorNames.Add(prefab.name);
@@ -65,16 +73,28 @@ public class FloorSpawningScript : MonoBehaviour
     {
         for (int i = 0; i < numberOfFloors; i++)
         {
-
-            if(i == 0)
+            switch (i)
             {
-                Debug.Log("INSTANCIATE RDC");
-                prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+                case 0:
+                    Debug.Log("INSTANCIATE RDC");
+                    prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+                    break;
+                case 1:
+                case 2:
+                case 3:
+                case 4:
+                    Debug.Log("INSTANCIATE ETAGES " + (i+1));
+                    prefab = Etages_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+                    break;
+                case 5:
+                    Debug.Log("INSTANCIATE TOIT");
+                    prefab = Toit_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+                    break;
+                default:
+                    prefab = floors[UnityEngine.Random.Range(0, floors.Count - 1)];
+                    break;
             }
-            else
-            {
-                prefab = floors[UnityEngine.Random.Range(0, floors.Count - 1)];
-            }
+           
             
             var obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
             obj.transform.parent = container.transform;
@@ -89,8 +109,6 @@ public class FloorSpawningScript : MonoBehaviour
 
         Debug.Log("Floors: [" + String.Join(", ", StorageScript.GM.floorNames));
     }
-
-
 
 
     // Update is called once per frame
