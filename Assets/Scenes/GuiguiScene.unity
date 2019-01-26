@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.45004702, g: 0.50009847, b: 0.5754947, a: 1}
+  m_IndirectSpecularColor: {r: 0.45004696, g: 0.50009835, b: 0.57549435, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -291,7 +291,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 577944145}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: dfcc4e76026cddf43b1df90624fd1934, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3

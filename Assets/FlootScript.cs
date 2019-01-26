@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class FlootScript : MonoBehaviour
 {
+
+
+
     // Update is called once per frame
     void Update()
     {
         
     }
 
-    void OnTriggerEnter(Collider collider)
+    //void OnTriggerEnter(Collider collider)
+    //{
+    //    StartCoroutine(Stuck());
+    //}
+
+    void OnCollisionEnter(Collision collision)
     {
         StartCoroutine(Stuck());
     }
