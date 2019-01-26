@@ -556,7 +556,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -1, y: 2}
+      localPivot: {x: -0.5, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
@@ -614,7 +614,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 1, y: 2}
+      localPivot: {x: 0.5, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
@@ -672,7 +672,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 1, y: -0.5}
+      localPivot: {x: 0.5, y: -0.5}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
@@ -701,7 +701,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -1, y: -0.5}
+      localPivot: {x: -0.5, y: -0.5}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
@@ -719,54 +719,54 @@ MonoBehaviour:
   - array: 0b0000000e00000012000000
   _vertices:
   - {x: 0, y: 0, z: 0}
-  - {x: 2, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
   - {x: 0, y: 4, z: 0}
-  - {x: 2, y: 4, z: 0}
-  - {x: 2, y: 0, z: 0}
-  - {x: 2, y: 0, z: -1}
-  - {x: 2, y: 4, z: 0}
-  - {x: 2, y: 4, z: -1}
-  - {x: 2, y: 0, z: -1}
+  - {x: 1, y: 4, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 0, z: -1}
+  - {x: 1, y: 4, z: 0}
+  - {x: 1, y: 4, z: -1}
+  - {x: 1, y: 0, z: -1}
   - {x: 0, y: 0, z: -1}
-  - {x: 2, y: 4, z: -1}
+  - {x: 1, y: 4, z: -1}
   - {x: 0, y: 4, z: -1}
   - {x: 0, y: 0, z: -1}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 4, z: -1}
   - {x: 0, y: 4, z: 0}
   - {x: 0, y: 4, z: 0}
-  - {x: 2, y: 4, z: 0}
+  - {x: 1, y: 4, z: 0}
   - {x: 0, y: 4, z: -1}
-  - {x: 2, y: 4, z: -1}
+  - {x: 1, y: 4, z: -1}
   - {x: 0, y: 0, z: -1}
-  - {x: 2, y: 0, z: -1}
+  - {x: 1, y: 0, z: -1}
   - {x: 0, y: 0, z: 0}
-  - {x: 2, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
   _uv:
-  - {x: 0, y: 0}
-  - {x: -2, y: 0}
-  - {x: 0, y: 4}
-  - {x: -2, y: 4}
   - {x: 0, y: 0}
   - {x: -1, y: 0}
   - {x: 0, y: 4}
   - {x: -1, y: 4}
-  - {x: 2, y: 0}
   - {x: 0, y: 0}
-  - {x: 2, y: 4}
+  - {x: -1, y: 0}
+  - {x: 0, y: 4}
+  - {x: -1, y: 4}
+  - {x: 1, y: 0}
+  - {x: 0, y: 0}
+  - {x: 1, y: 4}
   - {x: 0, y: 4}
   - {x: 1, y: 0}
   - {x: 0, y: 0}
   - {x: 1, y: 4}
   - {x: 0, y: 4}
   - {x: 0, y: 0}
-  - {x: 2, y: 0}
+  - {x: 1, y: 0}
   - {x: 0, y: -1}
-  - {x: 2, y: -1}
+  - {x: 1, y: -1}
   - {x: 0, y: -1}
-  - {x: -2, y: -1}
+  - {x: -1, y: -1}
   - {x: 0, y: 0}
-  - {x: -2, y: 0}
+  - {x: -1, y: 0}
   _uv3: []
   _uv4: []
   _tangents: []
@@ -1112,55 +1112,55 @@ MonoBehaviour:
   - array: 090000000c00000014000000
   - array: 0b0000000e00000012000000
   _vertices:
-  - {x: 0, y: 0, z: 0}
-  - {x: 8, y: 0, z: 0}
-  - {x: 0, y: 4, z: 0}
-  - {x: 8, y: 4, z: 0}
-  - {x: 8, y: 0, z: 0}
-  - {x: 8, y: 0, z: -1}
-  - {x: 8, y: 4, z: 0}
-  - {x: 8, y: 4, z: -1}
-  - {x: 8, y: 0, z: -1}
-  - {x: 0, y: 0, z: -1}
-  - {x: 8, y: 4, z: -1}
-  - {x: 0, y: 4, z: -1}
-  - {x: 0, y: 0, z: -1}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 4, z: -1}
-  - {x: 0, y: 4, z: 0}
-  - {x: 0, y: 4, z: 0}
-  - {x: 8, y: 4, z: 0}
-  - {x: 0, y: 4, z: -1}
-  - {x: 8, y: 4, z: -1}
-  - {x: 0, y: 0, z: -1}
-  - {x: 8, y: 0, z: -1}
-  - {x: 0, y: 0, z: 0}
-  - {x: 8, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
+  - {x: 7, y: 0, z: 0}
+  - {x: 1, y: 4, z: 0}
+  - {x: 7, y: 4, z: 0}
+  - {x: 7, y: 0, z: 0}
+  - {x: 7, y: 0, z: -1}
+  - {x: 7, y: 4, z: 0}
+  - {x: 7, y: 4, z: -1}
+  - {x: 7, y: 0, z: -1}
+  - {x: 1, y: 0, z: -1}
+  - {x: 7, y: 4, z: -1}
+  - {x: 1, y: 4, z: -1}
+  - {x: 1, y: 0, z: -1}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 4, z: -1}
+  - {x: 1, y: 4, z: 0}
+  - {x: 1, y: 4, z: 0}
+  - {x: 7, y: 4, z: 0}
+  - {x: 1, y: 4, z: -1}
+  - {x: 7, y: 4, z: -1}
+  - {x: 1, y: 0, z: -1}
+  - {x: 7, y: 0, z: -1}
+  - {x: 1, y: 0, z: 0}
+  - {x: 7, y: 0, z: 0}
   _uv:
-  - {x: 0, y: 0}
-  - {x: -8, y: 0}
-  - {x: 0, y: 4}
-  - {x: -8, y: 4}
+  - {x: -1, y: 0}
+  - {x: -7, y: 0}
+  - {x: -1, y: 4}
+  - {x: -7, y: 4}
   - {x: 0, y: 0}
   - {x: -1, y: 0}
   - {x: 0, y: 4}
   - {x: -1, y: 4}
-  - {x: 8, y: 0}
-  - {x: 0, y: 0}
-  - {x: 8, y: 4}
-  - {x: 0, y: 4}
+  - {x: 7, y: 0}
+  - {x: 1, y: 0}
+  - {x: 7, y: 4}
+  - {x: 1, y: 4}
   - {x: 1, y: 0}
   - {x: 0, y: 0}
   - {x: 1, y: 4}
   - {x: 0, y: 4}
-  - {x: 0, y: 0}
-  - {x: 8, y: 0}
-  - {x: 0, y: -1}
-  - {x: 8, y: -1}
-  - {x: 0, y: -1}
-  - {x: -8, y: -1}
-  - {x: 0, y: 0}
-  - {x: -8, y: 0}
+  - {x: 1, y: 0}
+  - {x: 7, y: 0}
+  - {x: 1, y: -1}
+  - {x: 7, y: -1}
+  - {x: -1, y: -1}
+  - {x: -7, y: -1}
+  - {x: -1, y: 0}
+  - {x: -7, y: 0}
   _uv3: []
   _uv4: []
   _tangents: []
@@ -1344,7 +1344,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -1, y: 2}
+      localPivot: {x: -1.5, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
@@ -1402,7 +1402,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 1, y: 2}
+      localPivot: {x: 1.5, y: 2}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
@@ -1460,7 +1460,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: 1, y: -0.5}
+      localPivot: {x: 1.5, y: -0.5}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
@@ -1489,7 +1489,7 @@ MonoBehaviour:
       offset: {x: 0, y: 0}
       rotation: 0
       justify: 0
-      localPivot: {x: -1, y: -0.5}
+      localPivot: {x: -1.5, y: -0.5}
       localSize: {x: 0, y: 0}
       anchor: 9
     _mat: {fileID: 2100000, guid: 55296d1b6ee54e14e8eb4648d4b448ee, type: 2}
@@ -1506,54 +1506,54 @@ MonoBehaviour:
   - array: 090000000c00000014000000
   - array: 0b0000000e00000012000000
   _vertices:
-  - {x: 0, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
-  - {x: 0, y: 4, z: 0}
+  - {x: 1, y: 4, z: 0}
   - {x: 2, y: 4, z: 0}
   - {x: 2, y: 0, z: 0}
   - {x: 2, y: 0, z: -1}
   - {x: 2, y: 4, z: 0}
   - {x: 2, y: 4, z: -1}
   - {x: 2, y: 0, z: -1}
-  - {x: 0, y: 0, z: -1}
+  - {x: 1, y: 0, z: -1}
   - {x: 2, y: 4, z: -1}
-  - {x: 0, y: 4, z: -1}
-  - {x: 0, y: 0, z: -1}
-  - {x: 0, y: 0, z: 0}
-  - {x: 0, y: 4, z: -1}
-  - {x: 0, y: 4, z: 0}
-  - {x: 0, y: 4, z: 0}
+  - {x: 1, y: 4, z: -1}
+  - {x: 1, y: 0, z: -1}
+  - {x: 1, y: 0, z: 0}
+  - {x: 1, y: 4, z: -1}
+  - {x: 1, y: 4, z: 0}
+  - {x: 1, y: 4, z: 0}
   - {x: 2, y: 4, z: 0}
-  - {x: 0, y: 4, z: -1}
+  - {x: 1, y: 4, z: -1}
   - {x: 2, y: 4, z: -1}
-  - {x: 0, y: 0, z: -1}
+  - {x: 1, y: 0, z: -1}
   - {x: 2, y: 0, z: -1}
-  - {x: 0, y: 0, z: 0}
+  - {x: 1, y: 0, z: 0}
   - {x: 2, y: 0, z: 0}
   _uv:
-  - {x: 0, y: 0}
+  - {x: -1, y: 0}
   - {x: -2, y: 0}
-  - {x: 0, y: 4}
+  - {x: -1, y: 4}
   - {x: -2, y: 4}
   - {x: 0, y: 0}
   - {x: -1, y: 0}
   - {x: 0, y: 4}
   - {x: -1, y: 4}
   - {x: 2, y: 0}
-  - {x: 0, y: 0}
+  - {x: 1, y: 0}
   - {x: 2, y: 4}
-  - {x: 0, y: 4}
+  - {x: 1, y: 4}
   - {x: 1, y: 0}
   - {x: 0, y: 0}
   - {x: 1, y: 4}
   - {x: 0, y: 4}
-  - {x: 0, y: 0}
+  - {x: 1, y: 0}
   - {x: 2, y: 0}
-  - {x: 0, y: -1}
+  - {x: 1, y: -1}
   - {x: 2, y: -1}
-  - {x: 0, y: -1}
+  - {x: -1, y: -1}
   - {x: -2, y: -1}
-  - {x: 0, y: 0}
+  - {x: -1, y: 0}
   - {x: -2, y: 0}
   _uv3: []
   _uv4: []
