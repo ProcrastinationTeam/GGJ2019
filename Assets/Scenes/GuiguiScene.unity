@@ -393,12 +393,22 @@ MonoBehaviour:
   - {fileID: 7359531393637243994, guid: bf250a77a3b25f147898360c6da066fb, type: 3}
   - {fileID: 8730727127954582060, guid: 3206cf761f16d4a4b897758acf321d51, type: 3}
   Toit_Prefabs:
-  - {fileID: 3649607484484454440, guid: 2059eb2565cd3dd4e8b6af4613d14513, type: 3}
-  numberOfMiddleFloors: 8
+  - {fileID: 2686330139319988693, guid: f35a7397b38ee2c488ef6132a1a3dd86, type: 3}
+  - {fileID: 3115528895201300525, guid: b74ae74bf471e6f45a3e5e90912b3861, type: 3}
+  - {fileID: 2686330139319988693, guid: bf1b3f01bb53abb4592f649948b85c07, type: 3}
+  - {fileID: 5393762118182350987, guid: 2059eb2565cd3dd4e8b6af4613d14513, type: 3}
+  - {fileID: 9014114330415390334, guid: 0b817bbb3d72abd42be1baf8d9f9a96c, type: 3}
+  - {fileID: 1675670379451827421, guid: a862f9ca8b8fbb94ab294873d484f9dd, type: 3}
+  - {fileID: 4616813515032196068, guid: 3748ddf25e9065844a766aa151a786bd, type: 3}
+  - {fileID: 1148105705684117446, guid: adc2f4fc25ea31340a13e5b995d55a2a, type: 3}
+  - {fileID: 7576069111232082839, guid: 30b44c781332f824298f07a7944577b1, type: 3}
+  numberOfFloors: 7
   FirstContainer: {fileID: 1758588873}
   Containers: []
   ContainerNextPrefab: {fileID: 3999800157985959086, guid: 0cff9746f24618e46a5f16e2f5acce88,
     type: 3}
+  floorNames: []
+  selectedFloors: []
 --- !u!4 &784753579
 Transform:
   m_ObjectHideFlags: 0
@@ -427,6 +437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goforward: {fileID: 1666924634}
   translateCamera: 0
+  canSelectGround: 1
 --- !u!1 &897420607
 GameObject:
   m_ObjectHideFlags: 0

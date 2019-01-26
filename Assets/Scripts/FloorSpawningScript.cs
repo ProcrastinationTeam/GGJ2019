@@ -10,7 +10,7 @@ public class FloorSpawningScript : MonoBehaviour
     [SerializeField] private List<GameObject> RDC_Prefabs;
     [SerializeField] private List<GameObject> Etage_Prefabs;
     [SerializeField] private List<GameObject> Toit_Prefabs;
-    [SerializeField] private int numberOfMiddleFloors;
+    [SerializeField] private int numberOfFloors;
 
     [Header("Containers")]
     [SerializeField] public Transform FirstContainer;
@@ -26,7 +26,7 @@ public class FloorSpawningScript : MonoBehaviour
     void Start()
     {
         StartCoroutine(SpawnTower());
-        for(int i = 0; i < numberOfMiddleFloors + 1; i++)
+        for(int i = 0; i < numberOfFloors + 1; i++)
         {
             GameObject container = PrefabUtility.InstantiatePrefab(ContainerNextPrefab) as GameObject;
             container.transform.position = new Vector3(FirstContainer.position.x + (distanceBetweenContainers * (i + 1)), 0, 5);
@@ -39,15 +39,22 @@ public class FloorSpawningScript : MonoBehaviour
     {
         Transform firstGround = FirstContainer.transform.GetChild(0).transform;
 
-        // Spawn RDC
-
-        // Spawn others
-
-        // Spawn toit
-
-        for (int i = 0; i < numberOfMiddleFloors + 2; i++)
+        for (int i = 0; i < numberOfFloors; i++)
         {
-            GameObject prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+            GameObject prefab = null;
+
+            if (i == 0)
+            {
+                prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+            }
+            else if (i == numberOfFloors - 1)
+            {
+                prefab = Toit_Prefabs[UnityEngine.Random.Range(0, Toit_Prefabs.Count - 1)];
+            }
+            else
+            {
+                prefab = Etage_Prefabs[UnityEngine.Random.Range(0, Etage_Prefabs.Count - 1)];
+            }
 
             GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
             obj.transform.parent = FirstContainer;
@@ -85,9 +92,9 @@ public class FloorSpawningScript : MonoBehaviour
                             break;
                         }
                     }
-                } else if(i < numberOfMiddleFloors + 1)
+                } else if(i == numberOfFloors - 1)
                 {
-                    foreach (GameObject tempObject in RDC_Prefabs) // TODO: remettre RDC_Prefabs
+                    foreach (GameObject tempObject in Toit_Prefabs)
                     {
                         if (tempObject.name == selectedFloors[i].name)
                         {
@@ -97,7 +104,7 @@ public class FloorSpawningScript : MonoBehaviour
                     }
                 } else
                 {
-                    foreach (GameObject tempObject in RDC_Prefabs) // TODO: remettre Toit_Prefabs
+                    foreach (GameObject tempObject in Etage_Prefabs)
                     {
                         if (tempObject.name == selectedFloors[i].name)
                         {
@@ -132,18 +139,15 @@ public class FloorSpawningScript : MonoBehaviour
 
             if (floor == 0)
             {
-                // Debug.Log("INSTANCIATE RDC");
                 prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
             }
-            else if (floor < numberOfMiddleFloors + 1)
+            else if (floor == numberOfFloors - 1)
             {
-                // Debug.Log("INSTANCIATE ETAGES " + (i + 1));
-                prefab = Etage_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+                prefab = Toit_Prefabs[UnityEngine.Random.Range(0, Toit_Prefabs.Count - 1)];
             }
             else
             {
-                // Debug.Log("INSTANCIATE TOIT");
-                prefab = Toit_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+                prefab = Etage_Prefabs[UnityEngine.Random.Range(0, Etage_Prefabs.Count - 1)];
             }
 
             GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;

@@ -47,7 +47,6 @@ GameObject:
   - component: {fileID: 306781592306580354}
   - component: {fileID: 6475508672721364036}
   - component: {fileID: 5372684952648985927}
-  - component: {fileID: 1789445297862558430}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -414,20 +413,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &1789445297862558430
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4761602926722828336}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &4944978849526815397
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +426,6 @@ GameObject:
   - component: {fileID: 1854986429500805379}
   - component: {fileID: 8804829217268009258}
   - component: {fileID: 254827787826660670}
-  - component: {fileID: 3369187383809567288}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -808,20 +792,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &3369187383809567288
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4944978849526815397}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &5354011704128965084
 GameObject:
   m_ObjectHideFlags: 0
@@ -835,7 +805,6 @@ GameObject:
   - component: {fileID: 2405587910452900387}
   - component: {fileID: 4155136777358400975}
   - component: {fileID: 7215236905416087793}
-  - component: {fileID: 2614883507703720529}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -1202,20 +1171,6 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &2614883507703720529
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5354011704128965084}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}
 --- !u!1 &6977833906592096422
 GameObject:
   m_ObjectHideFlags: 0
@@ -1229,7 +1184,6 @@ GameObject:
   - component: {fileID: 3426934682767430531}
   - component: {fileID: 8882222123574334851}
   - component: {fileID: 4846679717630252006}
-  - component: {fileID: 6465469165683678410}
   m_Layer: 0
   m_Name: Arch
   m_TagString: Untagged
@@ -3108,17 +3062,3 @@ MonoBehaviour:
   m_selectedFaces: 
   m_SelectedEdges: []
   m_selectedTriangles: 
---- !u!64 &6465469165683678410
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6977833906592096422}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 0}

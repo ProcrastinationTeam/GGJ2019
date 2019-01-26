@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5250343914187858102}
   - component: {fileID: 4745621431271169161}
+  - component: {fileID: 8627156662680883583}
   m_Layer: 0
   m_Name: Toit CL
   m_TagString: Untagged
@@ -45,8 +46,24 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.987049, y: 2, z: 9.857317}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 9.93746, y: 2, z: 9.882112}
+  m_Center: {x: -0.02479434, y: 0, z: 0.01239717}
+--- !u!54 &8627156662680883583
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3115528895201300525}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 90
+  m_CollisionDetection: 0
 --- !u!1 &5455687033273568385
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,22 +3745,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7122765791518150867, guid: dad80df2387018248a5a3e22a9c2201d,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7122765791518150895, guid: dad80df2387018248a5a3e22a9c2201d,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7122765792063592313, guid: dad80df2387018248a5a3e22a9c2201d,
+    - target: {fileID: 7122765791518150867, guid: dad80df2387018248a5a3e22a9c2201d,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 7122765792063592309, guid: dad80df2387018248a5a3e22a9c2201d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122765792063592313, guid: dad80df2387018248a5a3e22a9c2201d,
         type: 3}
       propertyPath: m_Mesh
       value: 
