@@ -36,6 +36,7 @@ public class FloorSpawningScript : MonoBehaviour
             obj.transform.parent = container.transform;
 
             obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + (20 * (i + 1)), ground.transform.position.z);
+            obj.transform.rotation = ground.transform.rotation;
 
             StorageScript.GM.floorNames.Add(prefab.name);
             yield return new WaitForSeconds(0.5f);
