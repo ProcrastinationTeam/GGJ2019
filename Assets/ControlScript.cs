@@ -19,15 +19,10 @@ public class ControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if(Input.GetMouseButton(0))
         {
-            Debug.Log("CLICKED");
             moveX = speedH * Input.GetAxis("Mouse X");
             housePrefab.transform.Rotate(Vector3.down, moveX);
         }
-
-
-
     }
 }
