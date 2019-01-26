@@ -80,7 +80,6 @@ public class ControlScript : MonoBehaviour
             {
                 translateCamera = false;
                 currentCameraPosition++;
-                goforward.enabled = true;
                 canSelectGround = true; // TODO: attendre que tous les blocs soient tombés
                 StartCoroutine(floorSpawningScript.SpawnFloor(currentCameraPosition));
             }
@@ -89,7 +88,25 @@ public class ControlScript : MonoBehaviour
 
     private IEnumerator TempoAndGoForward()
     {
-        yield return new WaitForSeconds(0.5f);
+        // Faire tomber
+        Transform container = floorSpawningScript.FirstContainer;
+        Transform ground = container.GetChild(0);
+
+        Rigidbody rbGround = ground.gameObject.GetComponent<Rigidbody>();
+        rbGround.isKinematic = false;
+        rbGround.constraints = RigidbodyConstraints.None;
+        rbGround.AddForce(new Vector3(0, 1000, 0));
+        for (int i = 0; i < ground.gameObject.transform.childCount; i++)
+        {
+            Rigidbody rb = ground.gameObject.transform.GetChild(i).GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            rb.constraints = RigidbodyConstraints.None;
+        }
+
+        StartCoroutine(CleanStep(container));
+        //
+
+        yield return new WaitForSeconds(2.0f);
         GoForward();
     }
 
@@ -100,12 +117,12 @@ public class ControlScript : MonoBehaviour
             nextCameraPos = new Vector3(Camera.main.transform.position.x + translationX + (firstTime ? 4 : 0) + 0.1f, Camera.main.transform.position.y, Camera.main.transform.position.z);
             translateCamera = true;
             firstTime = false;
-            goforward.enabled = false;
         }
     }
 
     private void FirstGoForward()
     {
+        goforward.gameObject.SetActive(false);
         firstTranslateCamera = true;
         nextCameraPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 3, Camera.main.transform.position.z);
     }
@@ -126,7 +143,7 @@ public class ControlScript : MonoBehaviour
                 Rigidbody rbGround = ground.gameObject.GetComponent<Rigidbody>();
                 rbGround.isKinematic = false;
                 rbGround.constraints = RigidbodyConstraints.None;
-                rbGround.AddForce(new Vector3(0, 1000, 0));
+                rbGround.AddForce(new Vector3(0, 2000 / 8 * (currentCameraPosition + 2), 0));
                 for(int i = 0; i < ground.gameObject.transform.childCount; i++)
                 {
                     Rigidbody rb = ground.gameObject.transform.GetChild(i).GetComponent<Rigidbody>();
