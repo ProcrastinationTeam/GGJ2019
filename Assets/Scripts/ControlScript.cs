@@ -11,8 +11,7 @@ public class ControlScript : MonoBehaviour
     private float speedH = 4.0f;
 
     [Header("Narrative")]
-    [SerializeField]
-    private Button goforward;
+    [SerializeField] private Button goforward;
 
     public bool translateCamera = false;
 
@@ -73,11 +72,13 @@ public class ControlScript : MonoBehaviour
 
     private void GoForward()
     {
-        // Le firstTime c'est parce que la première fois faut un peu plus translater
-        nextCameraPos = new Vector3(Camera.main.transform.position.x + translationX + (firstTime ? 4 : 0) + 0.1f, Camera.main.transform.position.y, Camera.main.transform.position.z);
-        translateCamera = true;
-        firstTime = false;
-        goforward.enabled = false;
+        if (!translateCamera) {
+            // Le firstTime c'est parce que la première fois faut un peu plus translater
+            nextCameraPos = new Vector3(Camera.main.transform.position.x + translationX + (firstTime ? 4 : 0) + 0.1f, Camera.main.transform.position.y, Camera.main.transform.position.z);
+            translateCamera = true;
+            firstTime = false;
+            goforward.enabled = false;
+        }
     }
 
     public IEnumerator SelectedGround(string groundName)
