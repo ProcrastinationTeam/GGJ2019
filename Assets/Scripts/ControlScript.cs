@@ -17,6 +17,7 @@ public class ControlScript : MonoBehaviour
 
     Vector3 nextCameraPos;
     private Vector3 velocity = Vector3.zero;
+    private float velocitySize = 0;
 
     private float translationX = 30;
     private bool firstTime = true;
@@ -31,10 +32,13 @@ public class ControlScript : MonoBehaviour
     // etc
     private int currentCameraPosition = -1;
 
+    bool firstTranslateCamera = false;
+    float nextCameraSize = 5;
+
     // Start is called before the first frame update
     void Start()
     {
-       goforward.onClick.AddListener(GoForward);
+       goforward.onClick.AddListener(FirstGoForward);
        floorSpawningScript = GetComponent<FloorSpawningScript>();
     }
 
@@ -56,6 +60,19 @@ public class ControlScript : MonoBehaviour
             }
         }
 
+        if(firstTranslateCamera)
+        {
+            Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 1.0f);
+            Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, nextCameraSize, ref velocitySize, 0.8f);
+
+            if (Mathf.Abs(Camera.main.transform.position.y - nextCameraPos.y) < 0.1)
+            {
+                firstTranslateCamera = false;
+                goforward.gameObject.SetActive(false);
+                StartCoroutine(TempoAndGoForward());
+            }
+        }
+
         if(translateCamera)
         {
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 0.5f);
@@ -70,6 +87,12 @@ public class ControlScript : MonoBehaviour
         }
     }
 
+    private IEnumerator TempoAndGoForward()
+    {
+        yield return new WaitForSeconds(0.5f);
+        GoForward();
+    }
+
     private void GoForward()
     {
         if (!translateCamera) {
@@ -79,6 +102,12 @@ public class ControlScript : MonoBehaviour
             firstTime = false;
             goforward.enabled = false;
         }
+    }
+
+    private void FirstGoForward()
+    {
+        firstTranslateCamera = true;
+        nextCameraPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 3, Camera.main.transform.position.z);
     }
 
     public IEnumerator SelectedGround(string groundName)

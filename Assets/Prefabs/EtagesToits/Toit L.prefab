@@ -45,8 +45,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.904556, y: 2, z: 10.044874}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 9.904556, y: 5.37689, z: 10.044874}
+  m_Center: {x: 0, y: 1.6884452, z: 0}
 --- !u!54 &6376762188670198612
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -549,22 +549,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: -90.00001
       objectReference: {fileID: 0}
-    - target: {fileID: 7122765791518150895, guid: dad80df2387018248a5a3e22a9c2201d,
-        type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 7122765791518150867, guid: dad80df2387018248a5a3e22a9c2201d,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7122765792063592309, guid: dad80df2387018248a5a3e22a9c2201d,
+    - target: {fileID: 7122765792063592313, guid: dad80df2387018248a5a3e22a9c2201d,
         type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
-    - target: {fileID: 7122765792063592313, guid: dad80df2387018248a5a3e22a9c2201d,
+    - target: {fileID: 7122765791518150895, guid: dad80df2387018248a5a3e22a9c2201d,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7122765792063592309, guid: dad80df2387018248a5a3e22a9c2201d,
         type: 3}
       propertyPath: m_Mesh
       value: 
