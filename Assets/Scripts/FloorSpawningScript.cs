@@ -66,7 +66,7 @@ public class FloorSpawningScript : MonoBehaviour
         for (int i = 0; i < numberOfFloors; i++)
         {
 
-            if(i == 0)
+            if(i < 10)
             {
                 Debug.Log("INSTANCIATE RDC");
                 prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
@@ -81,6 +81,7 @@ public class FloorSpawningScript : MonoBehaviour
 
             obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + 20, ground.transform.position.z);
             obj.transform.rotation = ground.transform.rotation;
+            obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
 
 
             StorageScript.GM.floorNames.Add(prefab.name);

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class ControlScript : MonoBehaviour
 {
-
-    [SerializeField] private  GameObject housePrefab;
+    [SerializeField]
+    private  GameObject container;
 
     private Vector3 mousePosOnClick;
     private float moveX = 0.0f;
@@ -36,7 +36,7 @@ public class ControlScript : MonoBehaviour
         if(Input.GetMouseButton(0))
         {
             moveX = speedH * Input.GetAxis("Mouse X");
-            housePrefab.transform.Rotate(Vector3.down, moveX);
+            container.transform.RotateAround(container.transform.position, Vector3.up, moveX);
         }
 
         if(translateCamera)
