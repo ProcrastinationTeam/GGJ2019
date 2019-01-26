@@ -23,7 +23,6 @@ public class FloorSpawningScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Physics.gravity = new Vector3(0, -20.0f, 0);
         StartCoroutine(SpawnFloors());
     }
 
@@ -36,6 +35,8 @@ public class FloorSpawningScript : MonoBehaviour
             obj.transform.parent = container.transform;
 
             obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + 20, ground.transform.position.z);
+            obj.transform.rotation = ground.transform.rotation;
+
 
             StorageScript.GM.floorNames.Add(prefab.name);
             yield return new WaitForSeconds(0.5f);
