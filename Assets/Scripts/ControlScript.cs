@@ -17,6 +17,7 @@ public class ControlScript : MonoBehaviour
 
     Vector3 nextCameraPos;
     private Vector3 velocity = Vector3.zero;
+    private float velocitySize = 0;
 
     private float translationX = 30;
     private bool firstTime = true;
@@ -31,10 +32,13 @@ public class ControlScript : MonoBehaviour
     // etc
     private int currentCameraPosition = -1;
 
+    bool firstTranslateCamera = false;
+    float nextCameraSize = 5;
+
     // Start is called before the first frame update
     void Start()
     {
-       goforward.onClick.AddListener(GoForward);
+       goforward.onClick.AddListener(FirstGoForward);
        floorSpawningScript = GetComponent<FloorSpawningScript>();
     }
 
@@ -56,6 +60,19 @@ public class ControlScript : MonoBehaviour
             }
         }
 
+        if(firstTranslateCamera)
+        {
+            Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 1.0f);
+            Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, nextCameraSize, ref velocitySize, 0.8f);
+
+            if (Mathf.Abs(Camera.main.transform.position.y - nextCameraPos.y) < 0.1)
+            {
+                firstTranslateCamera = false;
+                goforward.gameObject.SetActive(false);
+                StartCoroutine(TempoAndGoForward());
+            }
+        }
+
         if(translateCamera)
         {
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 0.5f);
@@ -63,11 +80,34 @@ public class ControlScript : MonoBehaviour
             {
                 translateCamera = false;
                 currentCameraPosition++;
-                goforward.enabled = true;
                 canSelectGround = true; // TODO: attendre que tous les blocs soient tombés
                 StartCoroutine(floorSpawningScript.SpawnFloor(currentCameraPosition));
             }
         }
+    }
+
+    private IEnumerator TempoAndGoForward()
+    {
+        // Faire tomber
+        Transform container = floorSpawningScript.FirstContainer;
+        Transform ground = container.GetChild(0);
+
+        Rigidbody rbGround = ground.gameObject.GetComponent<Rigidbody>();
+        rbGround.isKinematic = false;
+        rbGround.constraints = RigidbodyConstraints.None;
+        rbGround.AddForce(new Vector3(0, 1000, 0));
+        for (int i = 0; i < ground.gameObject.transform.childCount; i++)
+        {
+            Rigidbody rb = ground.gameObject.transform.GetChild(i).GetComponent<Rigidbody>();
+            rb.isKinematic = false;
+            rb.constraints = RigidbodyConstraints.None;
+        }
+
+        StartCoroutine(CleanStep(container));
+        //
+
+        yield return new WaitForSeconds(2.0f);
+        GoForward();
     }
 
     private void GoForward()
@@ -77,8 +117,14 @@ public class ControlScript : MonoBehaviour
             nextCameraPos = new Vector3(Camera.main.transform.position.x + translationX + (firstTime ? 4 : 0) + 0.1f, Camera.main.transform.position.y, Camera.main.transform.position.z);
             translateCamera = true;
             firstTime = false;
-            goforward.enabled = false;
         }
+    }
+
+    private void FirstGoForward()
+    {
+        goforward.gameObject.SetActive(false);
+        firstTranslateCamera = true;
+        nextCameraPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 3, Camera.main.transform.position.z);
     }
 
     public IEnumerator SelectedGround(string groundName)
@@ -97,7 +143,7 @@ public class ControlScript : MonoBehaviour
                 Rigidbody rbGround = ground.gameObject.GetComponent<Rigidbody>();
                 rbGround.isKinematic = false;
                 rbGround.constraints = RigidbodyConstraints.None;
-                rbGround.AddForce(new Vector3(0, 1000, 0));
+                rbGround.AddForce(new Vector3(0, 2000 / 8 * (currentCameraPosition + 2), 0));
                 for(int i = 0; i < ground.gameObject.transform.childCount; i++)
                 {
                     Rigidbody rb = ground.gameObject.transform.GetChild(i).GetComponent<Rigidbody>();
