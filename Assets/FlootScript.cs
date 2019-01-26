@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class FlootScript : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -18,6 +12,21 @@ public class FlootScript : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        // GetComponent<Rigidbody>().isKinematic = true;
+        StartCoroutine(Stuck());
+    }
+
+    IEnumerator Stuck()
+    {
+        if(true)
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            yield return new WaitForSeconds(2);
+            rb.isKinematic = true;
+        } else
+        {
+            Rigidbody rb = GetComponent<Rigidbody>();
+            yield return new WaitForSeconds(1);
+        }
+        
     }
 }
