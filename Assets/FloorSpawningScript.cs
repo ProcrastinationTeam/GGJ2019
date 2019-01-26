@@ -23,6 +23,12 @@ public class FloorSpawningScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Physics.gravity = new Vector3(0, -20.0f, 0);
+        StartCoroutine(SpawnFloors());
+    }
+
+    IEnumerator SpawnFloors()
+    {
         for (int i = 0; i < numberOfFloors; i++)
         {
             GameObject prefab = floors[UnityEngine.Random.Range(0, floors.Count - 1)];
@@ -32,6 +38,7 @@ public class FloorSpawningScript : MonoBehaviour
             obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + (20 * (i + 1)), ground.transform.position.z);
 
             StorageScript.GM.floorNames.Add(prefab.name);
+            yield return new WaitForSeconds(0.5f);
         }
 
         Debug.Log("Floors: [" + String.Join(", ", StorageScript.GM.floorNames));
