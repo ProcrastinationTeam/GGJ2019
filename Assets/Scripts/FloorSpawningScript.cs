@@ -3,56 +3,57 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
-using UnityEngine.UI;
-
-//[Serializable]
-//public class Floooors
-//{
-//    public List<GameObject> listObject;
-//}
 
 public class FloorSpawningScript : MonoBehaviour
 {
+    [Header("Logic")]
+    [SerializeField] private List<GameObject> RDC_Prefabs;
+    [SerializeField] private List<GameObject> Etage_Prefabs;
+    [SerializeField] private List<GameObject> Toit_Prefabs;
+    [SerializeField] private int numberOfMiddleFloors;
 
-    [SerializeField]
-    private List<GameObject> floors;
+    [Header("Containers")]
+    [SerializeField] public Transform FirstContainer;
+    [HideInInspector] public List<Transform> Containers = new List<Transform>();
+    [SerializeField] private GameObject ContainerNextPrefab;
 
-    //[SerializeField]
-    //public List<Floooors> flooooors;
+    private float distanceBetweenContainers = 30;
 
-    [SerializeField]
-    public List<GameObject> RDC_Prefabs;
-
-    [Header("LOGIC")]
-
-    private GameObject prefab;
-
-
-    [SerializeField]
-    private GameObject container;
-    [SerializeField]
-    private GameObject ground;
-
-    [SerializeField]
-    private int numberOfFloors;
-
+    public List<GameObject> selectedFloors = new List<GameObject>();
 
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnFloors());
+        StartCoroutine(SpawnTower());
+        for(int i = 0; i < numberOfMiddleFloors + 1; i++)
+        {
+            GameObject container = PrefabUtility.InstantiatePrefab(ContainerNextPrefab) as GameObject;
+            container.transform.position = new Vector3(FirstContainer.position.x + (distanceBetweenContainers * (i + 1)), 0, 5);
+            container.transform.rotation = FirstContainer.rotation;
+            Containers.Add(container.transform);
+        }
     }
 
-    IEnumerator SpawnFloorsTest()
+    IEnumerator SpawnTower()
     {
-        for (int i = 0; i < numberOfFloors; i++)
-        {
-            GameObject prefab = floors[UnityEngine.Random.Range(0, floors.Count - 1)];
-            var obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
-            obj.transform.parent = container.transform;
+        Transform firstGround = FirstContainer.transform.GetChild(0).transform;
 
-            obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + 20, ground.transform.position.z);
-            obj.transform.rotation = ground.transform.rotation;
+        // Spawn RDC
+
+        // Spawn others
+
+        // Spawn toit
+
+        for (int i = 0; i < numberOfMiddleFloors + 2; i++)
+        {
+            GameObject prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+
+            GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+            obj.transform.parent = FirstContainer;
+
+            obj.transform.position = new Vector3(firstGround.position.x, firstGround.position.y + 20, firstGround.position.z);
+            obj.transform.rotation = firstGround.rotation;
+            //obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
 
             StorageScript.GM.floorNames.Add(prefab.name);
             yield return new WaitForSeconds(0.5f);
@@ -61,42 +62,80 @@ public class FloorSpawningScript : MonoBehaviour
         Debug.Log("Floors: [" + String.Join(", ", StorageScript.GM.floorNames));
     }
 
-    IEnumerator SpawnFloors()
+    // Spawn au prochain truc ceux précédemment
+    public IEnumerator SpawnSelectedFloors(int floor)
     {
-        for (int i = 0; i < numberOfFloors; i++)
+        Transform container = Containers[floor];
+        List<Transform> grounds = new List<Transform>(new Transform[] { container.GetChild(0), container.GetChild(1), container.GetChild(2), container.GetChild(3) });
+
+        Debug.Log(floor);
+        for (int i = 0; i < floor; i++)
         {
-
-            if(i < 10)
+            Debug.Log("bah non");
+            foreach (Transform ground in grounds)
             {
-                Debug.Log("INSTANCIATE RDC");
-                prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+                GameObject prefab = null;
+                if (i == 0)
+                {
+                    foreach(GameObject tempObject in RDC_Prefabs)
+                    {
+                        if(tempObject.name == selectedFloors[i].name)
+                        {
+                            prefab = tempObject;
+                            break;
+                        }
+                    }
+                } else if(i < numberOfMiddleFloors + 1)
+                {
+                    foreach (GameObject tempObject in RDC_Prefabs) // TODO: remettre RDC_Prefabs
+                    {
+                        if (tempObject.name == selectedFloors[i].name)
+                        {
+                            prefab = tempObject;
+                            break;
+                        }
+                    }
+                } else
+                {
+                    foreach (GameObject tempObject in RDC_Prefabs) // TODO: remettre Toit_Prefabs
+                    {
+                        if (tempObject.name == selectedFloors[i].name)
+                        {
+                            prefab = tempObject;
+                            break;
+                        }
+                    }
+                }
+
+                GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+                obj.transform.parent = ground;
+
+                obj.transform.position = new Vector3(ground.position.x, ground.position.y + 5, ground.position.z);
+                obj.transform.rotation = ground.rotation;
+                //obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
             }
-            else
-            {
-                prefab = floors[UnityEngine.Random.Range(0, floors.Count - 1)];
-            }
-            
-            var obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
-            obj.transform.parent = container.transform;
-
-            obj.transform.position = new Vector3(ground.transform.position.x, ground.transform.position.y + 20, ground.transform.position.z);
-            obj.transform.rotation = ground.transform.rotation;
-            obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
-
-
-            StorageScript.GM.floorNames.Add(prefab.name);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(0.1f);
         }
-
-        Debug.Log("Floors: [" + String.Join(", ", StorageScript.GM.floorNames));
     }
 
-
-
-
-    // Update is called once per frame
-    void Update()
+    // Spawn le nouveau floor
+    public IEnumerator SpawnFloor(int floor)
     {
-        
+        Transform container = Containers[floor];
+        List<Transform> grounds = new List<Transform>(new Transform[] { container.GetChild(0), container.GetChild(1), container.GetChild(2), container.GetChild(3) });
+
+        foreach (Transform ground in grounds)
+        {
+            GameObject prefab = RDC_Prefabs[UnityEngine.Random.Range(0, RDC_Prefabs.Count - 1)];
+
+            GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+            obj.transform.parent = ground;
+
+            obj.transform.position = new Vector3(ground.position.x, ground.position.y + 10, ground.position.z);
+            obj.transform.rotation = ground.rotation;
+            //obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
+
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 }

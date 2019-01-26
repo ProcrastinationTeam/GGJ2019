@@ -4,27 +4,15 @@ using UnityEngine;
 
 public class FlootScript : MonoBehaviour
 {
-    private Renderer rend;
-    private Color color;
-
+    private Renderer rendered;
+    private Color defaultColor;
     private Color hightlightColor = Color.yellow;
 
     void Start()
     {
-        rend = GetComponent<Renderer>();
-        color = rend.material.color;
+        rendered = GetComponent<Renderer>();
+        defaultColor = rendered.material.color;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    //void OnTriggerEnter(Collider collider)
-    //{
-    //    StartCoroutine(Stuck());
-    //}
 
     void OnCollisionEnter(Collision collision)
     {
@@ -48,18 +36,18 @@ public class FlootScript : MonoBehaviour
 
     void OnMouseOver()
     {
-        rend.material.color = hightlightColor;
+        rendered.material.color = hightlightColor;
     }
 
     void OnMouseExit()
     {
-        rend.material.color = color;
+        rendered.material.color = defaultColor;
     }
 
     void OnMouseDown()
     {
-        color = hightlightColor;
-        rend.material.color = color;
+        defaultColor = hightlightColor;
+        rendered.material.color = defaultColor;
         Debug.Log(name);
     }
 }

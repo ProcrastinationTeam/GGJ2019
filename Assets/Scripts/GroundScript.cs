@@ -1,20 +1,43 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GroundScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Renderer rendered;
+    private Color defaultColor;
+    private Color hightlightColor = Color.yellow;
+    private ControlScript controlScript;
+
     void Start()
     {
-        
+        rendered = GetComponent<Renderer>();
+        defaultColor = rendered.material.color;
+        controlScript = GameObject.Find("Manager").GetComponent<ControlScript>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnMouseOver()
     {
-        
+        if (controlScript.canSelectGround)
+        {
+            rendered.material.color = hightlightColor;
+        }
     }
 
-    
+    void OnMouseExit()
+    {
+        if (controlScript.canSelectGround)
+        {
+            rendered.material.color = defaultColor;
+        }
+    }
+
+    void OnMouseDown()
+    {
+        if(controlScript.canSelectGround)
+        {
+            defaultColor = hightlightColor;
+            rendered.material.color = defaultColor;
+            StartCoroutine(controlScript.SelectedGround(name));
+        }
+    }
 }
