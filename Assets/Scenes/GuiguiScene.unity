@@ -564,7 +564,7 @@ MonoBehaviour:
   - {fileID: 4616813515032196068, guid: 3748ddf25e9065844a766aa151a786bd, type: 3}
   - {fileID: 1148105705684117446, guid: adc2f4fc25ea31340a13e5b995d55a2a, type: 3}
   - {fileID: 7576069111232082839, guid: 30b44c781332f824298f07a7944577b1, type: 3}
-  numberOfFloors: 3
+  numberOfFloors: 7
   FirstContainer: {fileID: 1758588873}
   Containers: []
   ContainerNextPrefab: {fileID: 3999800157985959086, guid: 0cff9746f24618e46a5f16e2f5acce88,

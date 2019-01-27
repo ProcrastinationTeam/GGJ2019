@@ -35,6 +35,8 @@ public class ControlScript : MonoBehaviour
     bool firstTranslateCamera = false;
     float nextCameraSize = 5;
 
+    bool lastTranslateCamera = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -83,6 +85,17 @@ public class ControlScript : MonoBehaviour
                 currentCameraPosition++;
                 canSelectGround = true; // TODO: attendre que tous les blocs soient tombés
                 StartCoroutine(floorSpawningScript.SpawnFloor(currentCameraPosition));
+            }
+        }
+
+        if (lastTranslateCamera)
+        {
+            Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 2.0f);
+            Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, nextCameraSize, ref velocitySize, 2.0f);
+
+            if (Mathf.Abs(Camera.main.transform.position.x - nextCameraPos.x) < 0.1)
+            {
+                lastTranslateCamera = false;
             }
         }
     }
@@ -168,6 +181,28 @@ public class ControlScript : MonoBehaviour
         if(currentCameraPosition == floorSpawningScript.numberOfFloors - 1)
         {
             floorSpawningScript.EndGameUI(UnityEngine.Random.Range(0, 3));
+
+            lastTranslateCamera = true;
+            nextCameraSize = 2;
+            if(groundName == "Ground0")
+            {
+                nextCameraPos = new Vector3((30 * floorSpawningScript.numberOfFloors) - 1 - 6.5f, 11, -2.5f);
+            }
+            else if (groundName == "Ground1")
+            {
+                nextCameraPos = new Vector3((30 * floorSpawningScript.numberOfFloors) - 1 - 3.5f, 11, -5.5f);
+            }
+            else if (groundName == "Ground2")
+            {
+                nextCameraPos = new Vector3((30 * floorSpawningScript.numberOfFloors) - 1 - 0.5f, 11, -8.5f);
+            }
+            else
+            {
+                nextCameraPos = new Vector3((30 * floorSpawningScript.numberOfFloors) - 1 + 2.5f, 11, -11.5f);
+            }
+            // 89, 11, -5
+            // Gauche => 82.5, 11, -2.5
+            // Milieu gauche => 85.5, 11, -5.5
         } else
         {
             GoForward();
