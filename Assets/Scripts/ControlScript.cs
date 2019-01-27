@@ -96,6 +96,8 @@ public class ControlScript : MonoBehaviour
             if (Mathf.Abs(Camera.main.transform.position.x - nextCameraPos.x) < 0.1)
             {
                 lastTranslateCamera = false;
+
+                // TODO: fade
             }
         }
     }

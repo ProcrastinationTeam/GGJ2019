@@ -43,7 +43,7 @@ public class FloorSpawningScript : MonoBehaviour
     void Start()
     {
         StartGameUI();
-        Physics.gravity = new Vector3(0, -15.0f, 0);
+        // Physics.gravity = new Vector3(0, -15.0f, 0);
         StartCoroutine(SpawnTower());
         
         for(int i = 0; i < numberOfFloors + 1; i++)
@@ -87,7 +87,7 @@ public class FloorSpawningScript : MonoBehaviour
             //obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
 
             initialFloors.Add(prefab);
-            yield return new WaitForSeconds(0.5f);
+            yield return new WaitForSeconds(4.0f);
         }
 
         Debug.Log("Floors: [" + String.Join(", ", initialFloors));
@@ -207,22 +207,41 @@ public class FloorSpawningScript : MonoBehaviour
         StartCoroutine(Story());
     }
 
-    
-
     IEnumerator Story()
     {
-        StartCoroutine(FadeIn(startText));
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(2.5f);
+
         startText.text = "My house is like a cocoon";
-        yield return new WaitForSeconds(2f);
-        startText.text = "I like it there";
-        yield return new WaitForSeconds(2f);
-        startText.text = "But sometimes, I have to leave...";
-        yield return new WaitForSeconds(2f);
+        StartCoroutine(FadeIn(startText));
+        yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2.0f);
+
+        startText.text = "I like it there";
+        StartCoroutine(FadeIn(startText));
+        yield return new WaitForSeconds(2.0f);
+        StartCoroutine(FadeOut(startText));
+        yield return new WaitForSeconds(2.0f);
+
+        startText.text = "But sometimes, I have to leave";
+        StartCoroutine(FadeIn(startText));
+        yield return new WaitForSeconds(2.0f);
+        StartCoroutine(FadeOut(startText));
+        yield return new WaitForSeconds(2.0f);
+
+        startText.text = "And when I do";
+        StartCoroutine(FadeIn(startText));
+        yield return new WaitForSeconds(2.0f);
+        StartCoroutine(FadeOut(startText));
+        yield return new WaitForSeconds(2.0f);
+
+        startText.text = "I try and picture it in my mind";
+        StartCoroutine(FadeIn(startText));        
+        yield return new WaitForSeconds(4.0f);
+        StartCoroutine(FadeOut(startText));
+        yield return new WaitForSeconds(2.0f);
+
         StartCoroutine(FadeInButton(goForwardText));
-        
     }
 
     IEnumerator FadeInButton(Text text)
@@ -239,7 +258,7 @@ public class FloorSpawningScript : MonoBehaviour
 
     IEnumerator FadeIn(TMPro.TextMeshProUGUI texto)
     {
-        for (float f = 0f; f <= 1; f += 0.01f)
+        for (float f = 0f; f <= 1; f += Time.deltaTime)
         {
             var color = texto.color;
             color.a = f;
@@ -250,17 +269,13 @@ public class FloorSpawningScript : MonoBehaviour
 
     IEnumerator FadeOut(TMPro.TextMeshProUGUI texto)
 	{
-        for (float f = 1f; f >= 0; f -= 0.01f)
+        for (float f = 1f; f >= 0; f -= Time.deltaTime)
         {
             var color = texto.color;
             color.a = f;
             texto.color = color;
             yield return null;
         }
-
-        yield return new WaitForSeconds(2.0f);
-        // TODO: afficher "entrée pour recommencer"
-        retryPossible = true;
     }
 
     void Update()
