@@ -74,7 +74,7 @@ public class FloorSpawningScript : MonoBehaviour
         for (int i = 0; i < numberOfFloors; i++)
         {
             GameObject prefab = null;
-            audioS.PlayOneShot(FallBuildingSound);
+          
 
 
             if (i == 0)
@@ -91,14 +91,18 @@ public class FloorSpawningScript : MonoBehaviour
             }
 
             GameObject obj = Instantiate(prefab) as GameObject;
+
             obj.transform.parent = FirstContainer;
+            
 
             obj.transform.position = new Vector3(firstGround.position.x, firstGround.position.y + 20, firstGround.position.z);
             obj.transform.rotation = firstGround.rotation;
             //obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
-
+            
             initialFloors.Add(prefab);
-            yield return new WaitForSeconds(4.0f);
+            yield return new WaitForSeconds(0.5f);
+            audioS.PlayOneShot(FallBuildingSound);
+            yield return new WaitForSeconds(3.5f);
         }
 
         Debug.Log("Floors: [" + String.Join(", ", initialFloors));

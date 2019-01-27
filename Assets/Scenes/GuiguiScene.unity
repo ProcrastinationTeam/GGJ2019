@@ -609,6 +609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initBuildingSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  FallBuildingSound: {fileID: 8300000, guid: 5114b645428cab64eb21265a1c5cc27d, type: 3}
   audioS: {fileID: 784753581}
   endText: {fileID: 307147468}
   startText: {fileID: 897420609}
@@ -680,6 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goforwardSound: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
   selectionSound: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+  CameraSound: {fileID: 8300000, guid: 0b2ea7f79427b5b4e8cdcfde500b5828, type: 3}
   audioS: {fileID: 784753581}
   goforward: {fileID: 1666924634}
   translateCamera: 0

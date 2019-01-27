@@ -10,7 +10,9 @@ public class ControlScript : MonoBehaviour
     private AudioClip goforwardSound;
     [SerializeField]
     private AudioClip selectionSound;
-  
+    [SerializeField]
+    private AudioClip CameraSound;
+
 
     [SerializeField]
     private AudioSource audioS;
@@ -75,6 +77,8 @@ public class ControlScript : MonoBehaviour
 
         if(firstTranslateCamera)
         {
+            audioS.PlayOneShot(CameraSound);
+
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 1.0f);
             Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, nextCameraSize, ref velocitySize, 0.8f);
 
@@ -149,6 +153,7 @@ public class ControlScript : MonoBehaviour
 
     private void FirstGoForward()
     {
+        Debug.Log("CLICK");
         audioS.PlayOneShot(goforwardSound);
         goforward.gameObject.SetActive(false);
         firstTranslateCamera = true;
