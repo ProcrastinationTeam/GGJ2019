@@ -10,6 +10,9 @@ public class ControlScript : MonoBehaviour
     private AudioClip goforwardSound;
     [SerializeField]
     private AudioClip selectionSound;
+
+    [SerializeField]
+    private AudioClip FallBuildingSound;
     [SerializeField]
     private AudioClip CameraSound;
 
@@ -77,7 +80,7 @@ public class ControlScript : MonoBehaviour
 
         if(firstTranslateCamera)
         {
-            audioS.PlayOneShot(CameraSound);
+            //audioS.PlayOneShot(CameraSound);
 
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 1.0f);
             Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, nextCameraSize, ref velocitySize, 0.8f);
@@ -119,6 +122,7 @@ public class ControlScript : MonoBehaviour
     private IEnumerator TempoAndGoForward()
     {
         // Faire tomber
+        audioS.PlayOneShot(FallBuildingSound);
         Transform container = floorSpawningScript.FirstContainer;
         Transform ground = container.GetChild(0);
 
@@ -137,6 +141,7 @@ public class ControlScript : MonoBehaviour
         //
 
         yield return new WaitForSeconds(2.0f);
+        
         GoForward();
     }
 
