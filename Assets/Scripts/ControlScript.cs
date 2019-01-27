@@ -13,6 +13,8 @@ public class ControlScript : MonoBehaviour
     [SerializeField]
     private AudioClip selectionSound;
 
+    [SerializeField] private List<AudioClip> selectionsSound;
+
     [SerializeField]
     private AudioClip FallBuildingSound;
     [SerializeField]
@@ -63,7 +65,7 @@ public class ControlScript : MonoBehaviour
 
     bool goToBlack = false;
 
-    bool rotateAuto = false;
+    public bool rotateAuto = false;
 
     [SerializeField] PostProcessingProfile profile;
 

@@ -123,7 +123,7 @@ public class FloorSpawningScript : MonoBehaviour
             {
                 foreach (GameObject tempObject in allPrefabs)
                 {
-                    if (tempObject.name == selectedFloors[i].name.Replace("(Clone", ""))
+                    if (tempObject.name == selectedFloors[i].name.Replace("(Clone)", ""))
                     {
                         prefab = tempObject;
                         break;

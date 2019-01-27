@@ -15,6 +15,14 @@ public class GroundScript : MonoBehaviour
         controlScript = GameObject.Find("Manager").GetComponent<ControlScript>();
     }
 
+    void Update()
+    {
+        if(controlScript.rotateAuto)
+        {
+            rendered.material.color = defaultColor;
+        }
+    }
+
     void OnMouseOver()
     {
         if (controlScript.canSelectGround)
