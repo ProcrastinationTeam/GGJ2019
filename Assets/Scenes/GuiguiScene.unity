@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.45004696, g: 0.50009835, b: 0.57549435, a: 1}
+  m_IndirectSpecularColor: {r: 0.44300848, g: 0.49219733, b: 0.57192564, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -363,7 +363,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.7777778}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000020981, y: 0.6201172}
+  m_AnchoredPosition: {x: 0, y: 0.6201172}
   m_SizeDelta: {x: 0, y: -1.199997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &307147468
@@ -856,6 +856,7 @@ MonoBehaviour:
   Bottom: {fileID: 1241479517}
   Left: {fileID: 123384585}
   AllBlack: {fileID: 1162509890}
+  profile: {fileID: 11400000, guid: 0c338e0362c883742be57c37da825ed4, type: 2}
 --- !u!82 &784753581
 AudioSource:
   m_ObjectHideFlags: 0
