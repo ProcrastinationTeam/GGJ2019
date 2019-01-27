@@ -37,6 +37,12 @@ public class ControlScript : MonoBehaviour
 
     bool lastTranslateCamera = false;
 
+    [SerializeField] Image Circle;
+    [SerializeField] Image Top;
+    [SerializeField] Image Right;
+    [SerializeField] Image Bottom;
+    [SerializeField] Image Left;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -98,8 +104,28 @@ public class ControlScript : MonoBehaviour
                 lastTranslateCamera = false;
 
                 // TODO: fade
+                StartCoroutine(OnceYouGoBack());
             }
         }
+    }
+
+    private IEnumerator OnceYouGoBack()
+    {
+        float stepScale = Time.deltaTime;
+        Circle.transform.localScale = new Vector3(Circle.transform.localScale.x - stepScale, Circle.transform.localScale.y - stepScale, 1);
+
+        float step = Time.deltaTime * 100;
+        if(Circle.transform.localScale.x < 4)
+        {
+            Left.transform.position = new Vector3(Left.transform.position.x + step, Left.transform.position.y, Left.transform.position.z);
+            Right.transform.position = new Vector3(Right.transform.position.x - step, Right.transform.position.y, Right.transform.position.z);
+        }
+        if (Circle.transform.localScale.y < 3)
+        {
+            Bottom.transform.position = new Vector3(Bottom.transform.position.x, Bottom.transform.position.y + step, Bottom.transform.position.z);
+            Top.transform.position = new Vector3(Top.transform.position.x, Top.transform.position.y - step, Top.transform.position.z);
+        }        
+        yield return new WaitForSeconds(Time.deltaTime);
     }
 
     private IEnumerator TempoAndGoForward()
