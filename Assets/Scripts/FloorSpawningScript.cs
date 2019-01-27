@@ -33,6 +33,7 @@ public class FloorSpawningScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Physics.gravity = new Vector3(0, -15.0f, 0);
         StartCoroutine(SpawnTower());
         for(int i = 0; i < numberOfFloors + 1; i++)
         {
@@ -140,7 +141,7 @@ public class FloorSpawningScript : MonoBehaviour
             GameObject obj = Instantiate(prefab) as GameObject;
             obj.transform.parent = ground;
 
-            obj.transform.position = new Vector3(ground.position.x, ground.position.y + 10, ground.position.z);
+            obj.transform.position = new Vector3(ground.position.x, ground.position.y + 20, ground.position.z);
             obj.transform.rotation = ground.rotation;
             // obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
 
