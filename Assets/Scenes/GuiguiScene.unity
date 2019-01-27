@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.45004696, g: 0.50009835, b: 0.57549435, a: 1}
+  m_IndirectSpecularColor: {r: 0.45004702, g: 0.50009847, b: 0.5754947, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -574,6 +574,7 @@ MonoBehaviour:
     type: 3}
   floorNames: []
   selectedFloors: []
+  retryPossible: 0
 --- !u!4 &784753579
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,7 +1041,7 @@ Canvas:
   m_GameObject: {fileID: 1945161838}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 534669904}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
