@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.PostProcessing;
 
 public class ControlScript : MonoBehaviour
 {
@@ -64,11 +65,17 @@ public class ControlScript : MonoBehaviour
 
     bool rotateAuto = false;
 
+    [SerializeField] PostProcessingProfile profile;
+
     // Start is called before the first frame update
     void Start()
     {
-       goforward.onClick.AddListener(FirstGoForward);
-       floorSpawningScript = GetComponent<FloorSpawningScript>();
+        goforward.onClick.AddListener(FirstGoForward);
+        floorSpawningScript = GetComponent<FloorSpawningScript>();
+
+        GrainModel.Settings settings = profile.grain.settings;
+        settings.intensity = 0.7f;
+        profile.grain.settings = settings;
     }
 
     // Update is called once per frame
@@ -96,6 +103,13 @@ public class ControlScript : MonoBehaviour
 
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 1.0f);
             Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, nextCameraSize, ref velocitySize, 0.8f);
+
+            if (profile.grain.settings.intensity > 0)
+            {
+                GrainModel.Settings settings = profile.grain.settings;
+                settings.intensity -= Time.deltaTime / 4;
+                profile.grain.settings = settings;
+            }
 
             if (Mathf.Abs(Camera.main.transform.position.y - nextCameraPos.y) < 0.1)
             {
@@ -175,6 +189,12 @@ public class ControlScript : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         goToBlack = true;
+        AllBlack.gameObject.SetActive(true);
+        Left.gameObject.SetActive(true);
+        Right.gameObject.SetActive(true);
+        Top.gameObject.SetActive(true);
+        Bottom.gameObject.SetActive(true);
+        Circle.gameObject.SetActive(true);
         yield return new WaitForSeconds(13);
         SceneManager.LoadScene(0);
     }
