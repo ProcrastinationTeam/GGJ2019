@@ -9,6 +9,15 @@ using UnityEngine.SceneManagement;
 
 public class FloorSpawningScript : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip initBuildingSound;
+
+    [SerializeField]
+    private AudioClip FallBuildingSound;
+
+    [SerializeField]
+    private AudioSource audioS;
+
     [Header("Narrative")]
     [SerializeField]
     private TMPro.TextMeshProUGUI endText;
@@ -65,6 +74,8 @@ public class FloorSpawningScript : MonoBehaviour
         for (int i = 0; i < numberOfFloors; i++)
         {
             GameObject prefab = null;
+            audioS.PlayOneShot(FallBuildingSound);
+
 
             if (i == 0)
             {
@@ -101,6 +112,7 @@ public class FloorSpawningScript : MonoBehaviour
 
         for (int i = 0; i < floor; i++)
         {
+            audioS.PlayOneShot(FallBuildingSound);
             GameObject prefab = null;
 
             foreach (Transform ground in grounds)
@@ -136,6 +148,8 @@ public class FloorSpawningScript : MonoBehaviour
         int indexRightOne = UnityEngine.Random.Range(0, 4);
         for (int i = 0; i < 4; i++)
         {
+            // audio source list
+            audioS.PlayOneShot(FallBuildingSound);
             if (floor != 0 && i == indexRightOne)
             {
                 foreach (GameObject tempObject in allPrefabs)
@@ -209,28 +223,36 @@ public class FloorSpawningScript : MonoBehaviour
 
     IEnumerator Story()
     {
+
+        
         yield return new WaitForSeconds(2.5f);
 
         startText.text = "My house is like a cocoon";
         StartCoroutine(FadeIn(startText));
+        
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
+        
         yield return new WaitForSeconds(2.0f);
 
         startText.text = "I like it there";
         StartCoroutine(FadeIn(startText));
+        
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
+        
         yield return new WaitForSeconds(2.0f);
 
         startText.text = "But sometimes, I have to leave";
         StartCoroutine(FadeIn(startText));
+        
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
         yield return new WaitForSeconds(2.0f);
 
         startText.text = "And when I do";
         StartCoroutine(FadeIn(startText));
+        
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
         yield return new WaitForSeconds(2.0f);

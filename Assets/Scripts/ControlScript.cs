@@ -9,6 +9,10 @@ public class ControlScript : MonoBehaviour
     [SerializeField]
     private AudioClip goforwardSound;
     [SerializeField]
+    private AudioClip selectionSound;
+  
+
+    [SerializeField]
     private AudioSource audioS;
 
 
@@ -153,6 +157,7 @@ public class ControlScript : MonoBehaviour
 
     public IEnumerator SelectedGround(string groundName)
     {
+        audioS.PlayOneShot(selectionSound);
         canSelectGround = false;
 
         yield return new WaitForSeconds(0.5f);

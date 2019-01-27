@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.45004702, g: 0.50009847, b: 0.5754947, a: 1}
+  m_IndirectSpecularColor: {r: 0.45004696, g: 0.50009835, b: 0.57549435, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -608,6 +608,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003e6096cdaa14946a7cd7ca1a4a6198, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initBuildingSound: {fileID: 8300000, guid: 29bde6326b4c34ad8a12da475f79b50a, type: 3}
+  audioS: {fileID: 784753581}
   endText: {fileID: 307147468}
   startText: {fileID: 897420609}
   goforward: {fileID: 1666924634}
@@ -676,7 +678,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35573aa9dd9a6554fb12afc50e7f63fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goforwardSound: {fileID: 0}
+  goforwardSound: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
+  selectionSound: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
   audioS: {fileID: 784753581}
   goforward: {fileID: 1666924634}
   translateCamera: 0
