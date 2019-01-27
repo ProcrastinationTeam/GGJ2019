@@ -191,7 +191,7 @@ public class FloorSpawningScript : MonoBehaviour
                 GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
                 obj.transform.parent = ground;
 
-                obj.transform.position = new Vector3(ground.position.x, ground.position.y + 10, ground.position.z);
+                obj.transform.position = new Vector3(ground.position.x, ground.position.y + 15, ground.position.z);
                 obj.transform.rotation = ground.rotation;
                 // obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
 

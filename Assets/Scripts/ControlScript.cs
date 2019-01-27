@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ControlScript : MonoBehaviour
 {
@@ -54,6 +55,9 @@ public class ControlScript : MonoBehaviour
     [SerializeField] Image Right;
     [SerializeField] Image Bottom;
     [SerializeField] Image Left;
+    [SerializeField] Image AllBlack;
+
+    bool goToBlack = false;
 
     bool rotateAuto = false;
 
@@ -115,19 +119,42 @@ public class ControlScript : MonoBehaviour
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 2.0f);
             Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, nextCameraSize, ref velocitySize, 2.0f);
 
+            rotateAuto = true;
+
             if (Mathf.Abs(Camera.main.transform.position.x - nextCameraPos.x) < 0.1)
             {
                 lastTranslateCamera = false;
-                rotateAuto = true;
-
-                // TODO: fade
                 StartCoroutine(OnceYouGoBlack());
+            }
+        }
+
+        if(goToBlack)
+        {
+            float stepScale = Time.deltaTime * 0.7f;
+            Circle.transform.localScale = new Vector3(Circle.transform.localScale.x - stepScale, Circle.transform.localScale.y - stepScale, 1);
+
+            float alphaScale = Time.deltaTime / 3;
+            
+
+            float stepY = Time.deltaTime * 50;
+            float stepX = Time.deltaTime * 100;
+            if (Circle.transform.localScale.x < 4)
+            {
+                AllBlack.color = new Color(AllBlack.color.r, AllBlack.color.g, AllBlack.color.g, AllBlack.color.a + alphaScale);
+
+                Left.transform.position = new Vector3(Left.transform.position.x + stepX, Left.transform.position.y, Left.transform.position.z);
+                Right.transform.position = new Vector3(Right.transform.position.x - stepX, Right.transform.position.y, Right.transform.position.z);
+            }
+            if (Circle.transform.localScale.y < 3)
+            {
+                Bottom.transform.position = new Vector3(Bottom.transform.position.x, Bottom.transform.position.y + stepY, Bottom.transform.position.z);
+                Top.transform.position = new Vector3(Top.transform.position.x, Top.transform.position.y - stepY, Top.transform.position.z);
             }
         }
 
         if(rotateAuto)
         {
-            moveX = Time.deltaTime * 5;
+            moveX = Time.deltaTime * 10;
 
             //floorSpawningScript.FirstContainer.RotateAround(floorSpawningScript.FirstContainer.position, Vector3.up, moveX);
             foreach (Transform container in floorSpawningScript.Containers)
@@ -143,21 +170,10 @@ public class ControlScript : MonoBehaviour
 
     private IEnumerator OnceYouGoBlack()
     {
-        float stepScale = Time.deltaTime;
-        Circle.transform.localScale = new Vector3(Circle.transform.localScale.x - stepScale, Circle.transform.localScale.y - stepScale, 1);
-
-        float step = Time.deltaTime * 100;
-        if(Circle.transform.localScale.x < 4)
-        {
-            Left.transform.position = new Vector3(Left.transform.position.x + step, Left.transform.position.y, Left.transform.position.z);
-            Right.transform.position = new Vector3(Right.transform.position.x - step, Right.transform.position.y, Right.transform.position.z);
-        }
-        if (Circle.transform.localScale.y < 3)
-        {
-            Bottom.transform.position = new Vector3(Bottom.transform.position.x, Bottom.transform.position.y + step, Bottom.transform.position.z);
-            Top.transform.position = new Vector3(Top.transform.position.x, Top.transform.position.y - step, Top.transform.position.z);
-        }        
-        yield return new WaitForSeconds(Time.deltaTime);
+        yield return new WaitForSeconds(2);
+        goToBlack = true;
+        yield return new WaitForSeconds(13);
+        SceneManager.LoadScene(0);
     }
 
     private IEnumerator TempoAndGoForward()
