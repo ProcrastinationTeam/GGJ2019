@@ -270,7 +270,7 @@ public class FloorSpawningScript : MonoBehaviour
         StartCoroutine(FadeOut(startText));
         yield return new WaitForSeconds(2.0f);
 
-        startText.text = "I try picture it in my mind";
+        startText.text = "I picture it in my mind";
         StartCoroutine(FadeIn(startText));        
         yield return new WaitForSeconds(4.0f);
         StartCoroutine(FadeOut(startText));
