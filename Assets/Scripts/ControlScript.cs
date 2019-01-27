@@ -47,6 +47,7 @@ public class ControlScript : MonoBehaviour
     {
         if(Input.GetMouseButton(0))
         {
+
             moveX = speedH * Input.GetAxis("Mouse X");
 
             floorSpawningScript.FirstContainer.RotateAround(floorSpawningScript.FirstContainer.position, Vector3.up, moveX);
