@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FloorSpawningScript : MonoBehaviour
 {
-
     [Header("Narrative")]
     [SerializeField]
     private TMPro.TextMeshProUGUI endText;
@@ -15,7 +15,8 @@ public class FloorSpawningScript : MonoBehaviour
     [SerializeField] private List<GameObject> RDC_Prefabs;
     [SerializeField] private List<GameObject> Etage_Prefabs;
     [SerializeField] private List<GameObject> Toit_Prefabs;
-    [SerializeField] private int numberOfFloors;
+    private List<GameObject> allPrefabs = new List<GameObject>();
+    [SerializeField] public int numberOfFloors;
 
     [Header("Containers")]
     [SerializeField] public Transform FirstContainer;
@@ -26,18 +27,23 @@ public class FloorSpawningScript : MonoBehaviour
 
     [HideInInspector] public List<string> floorNames = new List<string>();
     [HideInInspector] public List<GameObject> selectedFloors = new List<GameObject>();
-    
+
+    public bool retryPossible = false;
+
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(SpawnTower());
         for(int i = 0; i < numberOfFloors + 1; i++)
         {
-            GameObject container = PrefabUtility.InstantiatePrefab(ContainerNextPrefab) as GameObject;
+            GameObject container = Instantiate(ContainerNextPrefab) as GameObject;
             container.transform.position = new Vector3(FirstContainer.position.x + (distanceBetweenContainers * (i + 1)), 0, 5);
             container.transform.rotation = FirstContainer.rotation;
             Containers.Add(container.transform);
         }
+        allPrefabs.AddRange(RDC_Prefabs);
+        allPrefabs.AddRange(Etage_Prefabs);
+        allPrefabs.AddRange(Toit_Prefabs);
     }
 
     IEnumerator SpawnTower()
@@ -61,7 +67,7 @@ public class FloorSpawningScript : MonoBehaviour
                 prefab = Etage_Prefabs[UnityEngine.Random.Range(0, Etage_Prefabs.Count - 1)];
             }
 
-            GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+            GameObject obj = Instantiate(prefab) as GameObject;
             obj.transform.parent = FirstContainer;
 
             obj.transform.position = new Vector3(firstGround.position.x, firstGround.position.y + 20, firstGround.position.z);
@@ -87,39 +93,16 @@ public class FloorSpawningScript : MonoBehaviour
 
             foreach (Transform ground in grounds)
             {
-                if (i == 0)
+                foreach(GameObject tempObject in allPrefabs)
                 {
-                    foreach(GameObject tempObject in RDC_Prefabs)
+                    if(tempObject.name == selectedFloors[i].name.Replace("(Clone)", ""))
                     {
-                        if(tempObject.name == selectedFloors[i].name)
-                        {
-                            prefab = tempObject;
-                            break;
-                        }
-                    }
-                } else if(i == numberOfFloors - 1)
-                {
-                    foreach (GameObject tempObject in Toit_Prefabs)
-                    {
-                        if (tempObject.name == selectedFloors[i].name)
-                        {
-                            prefab = tempObject;
-                            break;
-                        }
-                    }
-                } else
-                {
-                    foreach (GameObject tempObject in Etage_Prefabs)
-                    {
-                        if (tempObject.name == selectedFloors[i].name)
-                        {
-                            prefab = tempObject;
-                            break;
-                        }
+                        prefab = tempObject;
+                        break;
                     }
                 }
-
-                GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+ 
+                GameObject obj = Instantiate(prefab) as GameObject;
                 obj.transform.parent = ground;
 
                 obj.transform.position = new Vector3(ground.position.x, ground.position.y + 5, ground.position.z);
@@ -154,7 +137,7 @@ public class FloorSpawningScript : MonoBehaviour
                 prefab = Etage_Prefabs[UnityEngine.Random.Range(0, Etage_Prefabs.Count - 1)];
             }
 
-            GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+            GameObject obj = Instantiate(prefab) as GameObject;
             obj.transform.parent = ground;
 
             obj.transform.position = new Vector3(ground.position.x, ground.position.y + 10, ground.position.z);
@@ -185,7 +168,6 @@ public class FloorSpawningScript : MonoBehaviour
         }
     }
 
-
     IEnumerator Fade()
     {
         for (float f = 0f; f <= 1; f += 0.001f)
@@ -194,6 +176,21 @@ public class FloorSpawningScript : MonoBehaviour
             color.a += f;
             endText.color = color;
             yield return null;
+        }
+
+        yield return new WaitForSeconds(2.0f);
+        // TODO: afficher "entrée pour recommencer"
+        retryPossible = true;
+    }
+
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+        if(retryPossible && (Input.GetKeyDown(KeyCode.Backspace) || Input.GetKeyDown(KeyCode.Space))) {
+            SceneManager.LoadScene(1);
         }
     }
 

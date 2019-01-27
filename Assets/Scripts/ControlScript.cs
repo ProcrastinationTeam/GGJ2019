@@ -158,13 +158,20 @@ public class ControlScript : MonoBehaviour
             }
         }
 
-        // Debug.Log("Selected Floors: [" + String.Join(", ", floorSpawningScript.selectedFloors));
-
-        StartCoroutine(CleanStep(container));
-        StartCoroutine(floorSpawningScript.SpawnSelectedFloors(currentCameraPosition + 1));
+       if (currentCameraPosition != floorSpawningScript.numberOfFloors - 1) {
+            StartCoroutine(CleanStep(container));
+            StartCoroutine(floorSpawningScript.SpawnSelectedFloors(currentCameraPosition + 1));
+        }
 
         yield return new WaitForSeconds(2.0f);
-        GoForward();
+
+        if(currentCameraPosition == floorSpawningScript.numberOfFloors - 1)
+        {
+            floorSpawningScript.EndGameUI(UnityEngine.Random.Range(0, 3));
+        } else
+        {
+            GoForward();
+        }
     }
 
     IEnumerator CleanStep(Transform container)
