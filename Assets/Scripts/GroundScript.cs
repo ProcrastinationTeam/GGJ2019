@@ -19,7 +19,7 @@ public class GroundScript : MonoBehaviour
     {
         if(controlScript.rotateAuto)
         {
-            rendered.material.color = defaultColor;
+            rendered.material.color = new Color(0.1374016f, 0.4044118f, 0.1278655f, 1);
         }
     }
 
