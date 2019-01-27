@@ -2510,17 +2510,17 @@ PrefabInstance:
     - target: {fileID: 3908470523968647833, guid: 38c7c055bc4c6cd46bd839b230397657,
         type: 3}
       propertyPath: m_selectedFaces.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3908470523968647833, guid: 38c7c055bc4c6cd46bd839b230397657,
         type: 3}
       propertyPath: m_SelectedEdges.Array.size
-      value: 4
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3908470523968647833, guid: 38c7c055bc4c6cd46bd839b230397657,
         type: 3}
       propertyPath: m_selectedTriangles.Array.size
-      value: 6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3908470523968647833, guid: 38c7c055bc4c6cd46bd839b230397657,
         type: 3}
