@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class FloorSpawningScript : MonoBehaviour
 {
@@ -10,6 +11,13 @@ public class FloorSpawningScript : MonoBehaviour
     [Header("Narrative")]
     [SerializeField]
     private TMPro.TextMeshProUGUI endText;
+    [SerializeField]
+    private TMPro.TextMeshProUGUI startText;
+    [SerializeField]
+    private Button goforward;
+    [SerializeField]
+    private Text goForwardText;
+
 
     [Header("Logic")]
     [SerializeField] private List<GameObject> RDC_Prefabs;
@@ -30,7 +38,9 @@ public class FloorSpawningScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartGameUI();
         StartCoroutine(SpawnTower());
+        
         for(int i = 0; i < numberOfFloors + 1; i++)
         {
             GameObject container = PrefabUtility.InstantiatePrefab(ContainerNextPrefab) as GameObject;
@@ -167,7 +177,7 @@ public class FloorSpawningScript : MonoBehaviour
 
     public void EndGameUI(int endId)
     {
-        StartCoroutine(Fade());
+        StartCoroutine(FadeIn(endText));
 
         switch (endId)
         {
@@ -185,16 +195,62 @@ public class FloorSpawningScript : MonoBehaviour
         }
     }
 
-
-    IEnumerator Fade()
+    public void StartGameUI()
     {
-        for (float f = 0f; f <= 1; f += 0.001f)
+        StartCoroutine(Story());
+    }
+
+    
+
+    IEnumerator Story()
+    {
+        StartCoroutine(FadeIn(startText));
+        yield return new WaitForSeconds(2f);
+        startText.text = "My house is like a cocoon";
+        yield return new WaitForSeconds(2f);
+        startText.text = "I like it there";
+        yield return new WaitForSeconds(2f);
+        startText.text = "But sometimes, I have to leave...";
+        yield return new WaitForSeconds(2f);
+        StartCoroutine(FadeOut(startText));
+        yield return new WaitForSeconds(1f);
+        StartCoroutine(FadeInButton(goForwardText));
+        
+    }
+
+    IEnumerator FadeInButton(Text text)
+    {
+        goforward.gameObject.SetActive(true);
+        for (float f = 0f; f <= 1; f += 0.01f)
         {
-            var color = endText.color;
-            color.a += f;
-            endText.color = color;
+            var color = text.color;
+            color.a = f;
+            text.color = color;
             yield return null;
         }
     }
+
+        IEnumerator FadeIn(TMPro.TextMeshProUGUI texto)
+    {
+        for (float f = 0f; f <= 1; f += 0.01f)
+        {
+            var color = texto.color;
+            color.a = f;
+            texto.color = color;
+            yield return null;
+        }
+    }
+
+    IEnumerator FadeOut(TMPro.TextMeshProUGUI texto)
+    {
+        for (float f = 1f; f >= 0; f -= 0.01f)
+        {
+            var color = texto.color;
+            color.a = f;
+            texto.color = color;
+            yield return null;
+        }
+    }
+
 
 }
