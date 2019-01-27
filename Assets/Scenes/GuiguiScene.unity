@@ -388,8 +388,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: Yolo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bff2a90d2219fe74c951fb52ddb4e347, type: 2}
-  m_sharedMaterial: {fileID: 21612937935232458, guid: bff2a90d2219fe74c951fb52ddb4e347,
+  m_fontAsset: {fileID: 11400000, guid: c2ced8f71a6d6b8419efa2d36b170f54, type: 2}
+  m_sharedMaterial: {fileID: 21570219666984696, guid: c2ced8f71a6d6b8419efa2d36b170f54,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -704,8 +704,8 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 915052c1892be654c959ae805398f9d1, type: 3}
-    m_FontSize: 85
+    m_Font: {fileID: 12800000, guid: 5ab7b01b8629a73468e02c3f45c42534, type: 3}
+    m_FontSize: 70
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 2
@@ -1117,8 +1117,8 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_text: My house is like a cocoon
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bff2a90d2219fe74c951fb52ddb4e347, type: 2}
-  m_sharedMaterial: {fileID: 21612937935232458, guid: bff2a90d2219fe74c951fb52ddb4e347,
+  m_fontAsset: {fileID: 11400000, guid: c2ced8f71a6d6b8419efa2d36b170f54, type: 2}
+  m_sharedMaterial: {fileID: 21570219666984696, guid: c2ced8f71a6d6b8419efa2d36b170f54,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1766,7 +1766,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -369, y: -257.38}
+  m_AnchoredPosition: {x: -369, y: -200.38}
   m_SizeDelta: {x: 612.69995, y: 113.70001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1666924634
