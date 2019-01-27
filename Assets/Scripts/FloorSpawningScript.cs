@@ -219,10 +219,10 @@ public class FloorSpawningScript : MonoBehaviour
                 endText.text = "It seems your home is the result of discovery and originality";
                 break;
             case 1:
-                endText.text = "Your home is a mix of nostalgia and curiosity, you explored new horizon";
+                endText.text = "Your home is a mix of nostalgia and curiosity, you explored new horizons";
                 break;
             case 2:
-                endText.text = "Your home is filled of tradition and you seem to latch on the memories within you";
+                endText.text = "Your home is filled with tradition and you seem to latch onto your memories";
                 break;
             default:
                 break;
@@ -240,7 +240,7 @@ public class FloorSpawningScript : MonoBehaviour
         
         yield return new WaitForSeconds(2.5f);
 
-        startText.text = "My house is like a cocoon";
+        startText.text = "My house is like a cocoon ...";
         StartCoroutine(FadeIn(startText));
         
         yield return new WaitForSeconds(2.0f);
@@ -248,7 +248,7 @@ public class FloorSpawningScript : MonoBehaviour
         
         yield return new WaitForSeconds(2.0f);
 
-        startText.text = "I like it there";
+        startText.text = "I like it there ...";
         StartCoroutine(FadeIn(startText));
         
         yield return new WaitForSeconds(2.0f);
@@ -256,14 +256,14 @@ public class FloorSpawningScript : MonoBehaviour
         
         yield return new WaitForSeconds(2.0f);
 
-        startText.text = "But sometimes, I have to leave";
+        startText.text = "But sometimes, I have to leave ...";
         StartCoroutine(FadeIn(startText));
         
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
         yield return new WaitForSeconds(2.0f);
 
-        startText.text = "And when I do";
+        startText.text = "And when I do ...";
         StartCoroutine(FadeIn(startText));
         
         yield return new WaitForSeconds(2.0f);
