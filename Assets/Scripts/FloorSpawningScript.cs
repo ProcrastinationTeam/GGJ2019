@@ -207,13 +207,13 @@ public class FloorSpawningScript : MonoBehaviour
         switch (endId)
         {
             case 0:
-                endText.text = "Il semblerait que ton foyer soit le fruit de la découverte et de l'originalité...";
+                endText.text = "It seems your home is the result of discovery and originality";
                 break;
             case 1:
-                endText.text = "Ton foyer est le mélange de tes souvenirs et de l'ouverture vers de nouveaux horizons / tu as exploré de nouveau horizons";
+                endText.text = "Your home is a mix of nostalgia and curiosity, you explored new horizon";
                 break;
             case 2:
-                endText.text = "Ton foyer est emprunt de tradition et tu semble attacher à tes souvenirs";
+                endText.text = "Your home is filled of tradition and you seem to latch on the memories within you";
                 break;
             default:
                 break;
