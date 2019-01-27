@@ -130,7 +130,7 @@ public class FloorSpawningScript : MonoBehaviour
                     }
                 }
 
-                GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+                GameObject obj = Instantiate(prefab) as GameObject;
                 obj.transform.parent = ground;
 
                 obj.transform.position = new Vector3(ground.position.x, ground.position.y + 5, ground.position.z);
@@ -197,7 +197,7 @@ public class FloorSpawningScript : MonoBehaviour
                 Transform ground = grounds[i];
                 GameObject prefab = prefabs[i];
 
-                GameObject obj = PrefabUtility.InstantiatePrefab(prefab) as GameObject;
+                GameObject obj = Instantiate(prefab) as GameObject;
                 obj.transform.parent = ground;
 
                 obj.transform.position = new Vector3(ground.position.x, ground.position.y + 15, ground.position.z);
