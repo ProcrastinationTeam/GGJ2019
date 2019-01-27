@@ -6,6 +6,18 @@ using UnityEngine.UI;
 
 public class ControlScript : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip goforwardSound;
+    [SerializeField]
+    private AudioClip selectionSound;
+    [SerializeField]
+    private AudioClip CameraSound;
+
+
+    [SerializeField]
+    private AudioSource audioS;
+
+
     private Vector3 mousePosOnClick;
     private float moveX = 0.0f;
     private float speedH = 4.0f;
@@ -73,6 +85,8 @@ public class ControlScript : MonoBehaviour
 
         if(firstTranslateCamera)
         {
+            audioS.PlayOneShot(CameraSound);
+
             Camera.main.transform.position = Vector3.SmoothDamp(Camera.main.transform.position, nextCameraPos, ref velocity, 1.0f);
             Camera.main.orthographicSize = Mathf.SmoothDamp(Camera.main.orthographicSize, nextCameraSize, ref velocitySize, 0.8f);
 
@@ -172,6 +186,7 @@ public class ControlScript : MonoBehaviour
 
     private void GoForward()
     {
+        
         if (!translateCamera) {
             // Le firstTime c'est parce que la première fois faut un peu plus translater
             nextCameraPos = new Vector3(Camera.main.transform.position.x + translationX + (firstTime ? 4 : 0) + 0.1f, Camera.main.transform.position.y, Camera.main.transform.position.z);
@@ -182,6 +197,8 @@ public class ControlScript : MonoBehaviour
 
     private void FirstGoForward()
     {
+        Debug.Log("CLICK");
+        audioS.PlayOneShot(goforwardSound);
         goforward.gameObject.SetActive(false);
         firstTranslateCamera = true;
         nextCameraPos = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y + 3, Camera.main.transform.position.z);
@@ -189,6 +206,7 @@ public class ControlScript : MonoBehaviour
 
     public IEnumerator SelectedGround(string groundName)
     {
+        audioS.PlayOneShot(selectionSound);
         canSelectGround = false;
 
         yield return new WaitForSeconds(0.5f);

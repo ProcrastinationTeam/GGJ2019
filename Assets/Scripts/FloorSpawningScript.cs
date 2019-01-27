@@ -9,6 +9,15 @@ using UnityEngine.SceneManagement;
 
 public class FloorSpawningScript : MonoBehaviour
 {
+    [SerializeField]
+    private AudioClip initBuildingSound;
+
+    [SerializeField]
+    private AudioClip FallBuildingSound;
+
+    [SerializeField]
+    private AudioSource audioS;
+
     [Header("Narrative")]
     [SerializeField]
     private TMPro.TextMeshProUGUI endText;
@@ -65,6 +74,8 @@ public class FloorSpawningScript : MonoBehaviour
         for (int i = 0; i < numberOfFloors; i++)
         {
             GameObject prefab = null;
+          
+
 
             if (i == 0)
             {
@@ -80,14 +91,18 @@ public class FloorSpawningScript : MonoBehaviour
             }
 
             GameObject obj = Instantiate(prefab) as GameObject;
+
             obj.transform.parent = FirstContainer;
+            
 
             obj.transform.position = new Vector3(firstGround.position.x, firstGround.position.y + 20, firstGround.position.z);
             obj.transform.rotation = firstGround.rotation;
             //obj.transform.RotateAround(obj.GetComponent<BoxCollider>().bounds.center, Vector3.up, 90 * i);
-
+            
             initialFloors.Add(prefab);
-            yield return new WaitForSeconds(4.0f);
+            yield return new WaitForSeconds(0.5f);
+            audioS.PlayOneShot(FallBuildingSound);
+            yield return new WaitForSeconds(3.5f);
         }
 
         Debug.Log("Floors: [" + String.Join(", ", initialFloors));
@@ -101,6 +116,7 @@ public class FloorSpawningScript : MonoBehaviour
 
         for (int i = 0; i < floor; i++)
         {
+            audioS.PlayOneShot(FallBuildingSound);
             GameObject prefab = null;
 
             foreach (Transform ground in grounds)
@@ -136,6 +152,8 @@ public class FloorSpawningScript : MonoBehaviour
         int indexRightOne = UnityEngine.Random.Range(0, 4);
         for (int i = 0; i < 4; i++)
         {
+            // audio source list
+            audioS.PlayOneShot(FallBuildingSound);
             if (floor != 0 && i == indexRightOne)
             {
                 foreach (GameObject tempObject in allPrefabs)
@@ -189,13 +207,13 @@ public class FloorSpawningScript : MonoBehaviour
         switch (endId)
         {
             case 0:
-                endText.text = "Il semblerait que ton foyer soit le fruit de la découverte et de l'originalité...";
+                endText.text = "It seems your home is the result of discovery and originality";
                 break;
             case 1:
-                endText.text = "Ton foyer est le mélange de tes souvenirs et de l'ouverture vers de nouveaux horizons / tu as exploré de nouveau horizons";
+                endText.text = "Your home is a mix of nostalgia and curiosity, you explored new horizon";
                 break;
             case 2:
-                endText.text = "Ton foyer est emprunt de tradition et tu semble attacher à tes souvenirs";
+                endText.text = "Your home is filled of tradition and you seem to latch on the memories within you";
                 break;
             default:
                 break;
@@ -209,28 +227,36 @@ public class FloorSpawningScript : MonoBehaviour
 
     IEnumerator Story()
     {
+
+        
         yield return new WaitForSeconds(2.5f);
 
         startText.text = "My house is like a cocoon";
         StartCoroutine(FadeIn(startText));
+        
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
+        
         yield return new WaitForSeconds(2.0f);
 
         startText.text = "I like it there";
         StartCoroutine(FadeIn(startText));
+        
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
+        
         yield return new WaitForSeconds(2.0f);
 
         startText.text = "But sometimes, I have to leave";
         StartCoroutine(FadeIn(startText));
+        
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
         yield return new WaitForSeconds(2.0f);
 
         startText.text = "And when I do";
         StartCoroutine(FadeIn(startText));
+        
         yield return new WaitForSeconds(2.0f);
         StartCoroutine(FadeOut(startText));
         yield return new WaitForSeconds(2.0f);

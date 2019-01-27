@@ -8,6 +8,12 @@ public class FlootScript : MonoBehaviour
     private Color defaultColor;
     private Color hightlightColor = Color.yellow;
 
+    [SerializeField]
+    private AudioClip initBuildingSound;
+
+    [SerializeField]
+    private AudioSource audioS;
+
     void Start()
     {
         rendered = GetComponent<Renderer>();
@@ -16,6 +22,7 @@ public class FlootScript : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        audioS.PlayOneShot(initBuildingSound);
         StartCoroutine(Stuck());
     }
 
