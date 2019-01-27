@@ -43,6 +43,8 @@ public class ControlScript : MonoBehaviour
     [SerializeField] Image Bottom;
     [SerializeField] Image Left;
 
+    bool rotateAuto = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -53,7 +55,7 @@ public class ControlScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButton(0))
+        if(Input.GetMouseButton(0) && !rotateAuto)
         {
 
             moveX = speedH * Input.GetAxis("Mouse X");
@@ -102,14 +104,30 @@ public class ControlScript : MonoBehaviour
             if (Mathf.Abs(Camera.main.transform.position.x - nextCameraPos.x) < 0.1)
             {
                 lastTranslateCamera = false;
+                rotateAuto = true;
 
                 // TODO: fade
-                StartCoroutine(OnceYouGoBack());
+                StartCoroutine(OnceYouGoBlack());
+            }
+        }
+
+        if(rotateAuto)
+        {
+            moveX = Time.deltaTime * 5;
+
+            //floorSpawningScript.FirstContainer.RotateAround(floorSpawningScript.FirstContainer.position, Vector3.up, moveX);
+            foreach (Transform container in floorSpawningScript.Containers)
+            {
+                List<Transform> grounds = new List<Transform>(new Transform[] { container.GetChild(0), container.GetChild(1), container.GetChild(2), container.GetChild(3) });
+                foreach (Transform ground in grounds)
+                {
+                    ground.RotateAround(ground.position, Vector3.up, moveX);
+                }
             }
         }
     }
 
-    private IEnumerator OnceYouGoBack()
+    private IEnumerator OnceYouGoBlack()
     {
         float stepScale = Time.deltaTime;
         Circle.transform.localScale = new Vector3(Circle.transform.localScale.x - stepScale, Circle.transform.localScale.y - stepScale, 1);
