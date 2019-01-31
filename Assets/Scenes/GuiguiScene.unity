@@ -844,6 +844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goforwardSound: {fileID: 8300000, guid: a0ca8964c08d54c5dbebf245bdc474ca, type: 3}
   selectionSound: {fileID: 8300000, guid: 79180f511d89441b9aa23ccae1992fe0, type: 3}
+  selectionsSound: []
   FallBuildingSound: {fileID: 8300000, guid: 5114b645428cab64eb21265a1c5cc27d, type: 3}
   CameraSound: {fileID: 8300000, guid: 0b2ea7f79427b5b4e8cdcfde500b5828, type: 3}
   audioS: {fileID: 784753582}
@@ -856,6 +857,7 @@ MonoBehaviour:
   Bottom: {fileID: 1241479517}
   Left: {fileID: 123384585}
   AllBlack: {fileID: 1162509890}
+  rotateAuto: 0
   profile: {fileID: 11400000, guid: 0c338e0362c883742be57c37da825ed4, type: 2}
 --- !u!82 &784753581
 AudioSource:
